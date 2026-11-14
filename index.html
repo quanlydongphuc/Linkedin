@@ -22,397 +22,120 @@
       --shadow: 0 8px 26px rgba(30, 45, 70, .05);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
     * { box-sizing: border-box; }
     body { margin: 0; color: var(--ink); background: var(--bg); }
     button, select, textarea, input { font: inherit; }
     button { cursor: pointer; }
-
-    .app { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); }
-    .sidebar {
-      background: #18243a;
-      color: #dce4f2;
-      padding: 23px 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 27px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0 8px;
-      color: white;
-      font-size: 16px;
-      font-weight: 750;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 31px;
-      height: 31px;
-      border-radius: 9px;
-      color: white;
-      background: linear-gradient(135deg, #8091ff, #5269e8);
-    }
-    .nav-label {
-      color: #8d9ab1;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      padding: 0 10px 8px;
-    }
-    .nav-item {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      gap: 11px;
-      padding: 11px 12px;
-      margin: 3px 0;
-      border: 0;
-      border-radius: 9px;
-      text-align: left;
-      color: #bdc8da;
-      background: transparent;
-      font-size: 13px;
-    }
+    .app { min-height: 100vh; display: grid; grid-template-columns: 228px minmax(0, 1fr); }
+    .sidebar { background: #18243a; color: #dce4f2; padding: 22px 14px; display: flex; flex-direction: column; gap: 27px; }
+    .brand { display: flex; align-items: center; gap: 10px; padding: 0 8px; color: white; font-size: 16px; font-weight: 750; }
+    .brand-mark { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 9px; color: white; background: linear-gradient(135deg, #8091ff, #5269e8); }
+    .nav-label { color: #8d9ab1; font-size: 10px; font-weight: 700; letter-spacing: .12em; padding: 0 10px 8px; }
+    .nav-item { width: 100%; display: flex; align-items: center; gap: 11px; padding: 11px 12px; margin: 3px 0; border: 0; border-radius: 9px; text-align: left; color: #bdc8da; background: transparent; font-size: 13px; transition: background .15s, color .15s; }
+    .nav-item:hover { background: #24334d; color: white; }
     .nav-item.active { color: white; background: #293752; }
-    .nav-icon { width: 18px; text-align: center; }
-    .sidebar-note {
-      margin-top: auto;
-      border-top: 1px solid #344057;
-      padding: 15px 9px 0;
-      color: #aeb9ca;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
+    .nav-icon { width: 19px; text-align: center; }
+    .sidebar-note { margin-top: auto; border-top: 1px solid #344057; padding: 14px 9px 0; color: #aeb9ca; font-size: 10px; line-height: 1.6; }
     main { min-width: 0; }
-    .topbar {
-      height: 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 28px;
-      background: white;
-      border-bottom: 1px solid var(--line);
-    }
+    .topbar { height: 66px; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; background: white; border-bottom: 1px solid var(--line); }
     .breadcrumb { color: var(--muted); font-size: 12px; }
-    .breadcrumb strong { color: var(--ink); }
-    .user { color: #596579; font-size: 12px; }
-    .content { max-width: 1460px; margin: auto; padding: 27px 28px 40px; }
-    .page-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-    h1 { margin: 0 0 5px; font-size: 24px; letter-spacing: -.03em; }
-
-    .panel {
-      min-width: 0;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .panel-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 17px;
-      border-bottom: 1px solid var(--line);
-    }
+    .breadcrumb strong { color: var(--ink); font-weight: 650; }
+    .user { display: flex; align-items: center; gap: 9px; color: #455168; font-size: 12px; font-weight: 650; }
+    .user-avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: #4b60c9; background: #e9edff; font-size: 11px; font-weight: 750; }
+    .content { max-width: 1500px; margin: 0 auto; padding: 27px 30px 42px; }
+    .page-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+    h1 { margin: 0; font-size: 24px; letter-spacing: -.03em; }
+    .panel { min-width: 0; background: var(--white); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+    .panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 15px 17px; border-bottom: 1px solid var(--line); }
     .panel-title { font-size: 13px; font-weight: 720; }
     .muted { color: var(--muted); font-size: 10px; line-height: 1.5; }
-    .button {
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      padding: 8px 11px;
-      color: #536076;
-      background: white;
-      font-size: 11px;
-    }
-    .button:hover { filter: brightness(.98); }
+    .button { border: 1px solid var(--line); border-radius: 7px; padding: 8px 11px; color: #536076; background: white; font-size: 11px; transition: .15s; }
+    .button:hover { filter: brightness(.98); box-shadow: 0 2px 6px rgba(20,30,50,.06); }
+    .button:disabled { cursor: not-allowed; opacity: .55; }
     .button.primary { border-color: var(--blue); color: white; background: var(--blue); }
-    .button.pass { border-color: #b7e5cf; color: var(--green); background: var(--green-soft); }
-    .button.fail { border-color: #f2c8c5; color: var(--red); background: var(--red-soft); }
-    .button.danger { border-color: #efc3c0; color: var(--red); background: #fff8f7; }
-    .button.restore { border-color: #b7e5cf; color: var(--green); background: var(--green-soft); }
+    .button.pass, .button.restore { border-color: #b7e5cf; color: var(--green); background: var(--green-soft); }
+    .button.fail, .button.danger { border-color: #efc3c0; color: var(--red); background: #fff8f7; }
     .button.selected-pass { border-color: var(--green); color: white; background: var(--green); }
     .button.selected-fail { border-color: var(--red); color: white; background: var(--red); }
     .hidden { display: none !important; }
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
-      gap: 16px;
-      align-items: start;
-    }
+    .empty { padding: 30px 17px; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.6; }
+    .overview-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr); gap: 16px; align-items: start; }
     .job-list { padding: 5px 16px 14px; }
-    .job-card {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 2px;
-      border-bottom: 1px solid #eef0f4;
-    }
+    .job-card { display: flex; justify-content: space-between; gap: 14px; padding: 15px 2px; border-bottom: 1px solid #eef0f4; }
     .job-card:last-child { border-bottom: 0; }
-    .job-name { margin-bottom: 4px; font-size: 13px; font-weight: 720; }
+    .job-name { margin-bottom: 5px; font-size: 13px; font-weight: 720; }
     .job-meta { color: var(--muted); font-size: 10px; }
-    .job-feedback {
-      max-width: 700px;
-      margin-top: 8px;
-      color: #667286;
-      font-size: 10px;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
+    .job-feedback { max-width: 740px; margin-top: 8px; color: #667286; font-size: 10px; line-height: 1.55; white-space: pre-wrap; }
     .job-actions { display: flex; gap: 6px; flex-shrink: 0; }
-    .form { padding: 15px 17px 17px; }
+    .form { padding: 16px 17px 18px; }
     .field { margin-bottom: 12px; }
     .field label { display: block; margin-bottom: 6px; font-size: 11px; font-weight: 650; }
-    input, textarea, select {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      padding: 9px 10px;
-      color: var(--ink);
-      background: white;
-      font-size: 11px;
-    }
+    input, textarea, select { width: 100%; border: 1px solid var(--line); border-radius: 7px; padding: 9px 10px; color: var(--ink); background: white; font-size: 11px; }
     textarea { min-height: 96px; resize: vertical; line-height: 1.5; }
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #9aa8f4;
-      box-shadow: 0 0 0 3px #eef0ff;
-    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #9aa8f4; box-shadow: 0 0 0 3px #eef0ff; }
     .criteria-editor { display: grid; gap: 6px; margin-top: 8px; }
     .criteria-edit-row { display: grid; grid-template-columns: minmax(0, 1fr) 125px; gap: 7px; }
     .criteria-edit-row input, .criteria-edit-row select { padding: 7px 8px; font-size: 10px; }
     .form-actions { display: flex; gap: 7px; }
-
-    .screen-form { padding: 15px 17px; margin-bottom: 15px; }
-    .screen-grid {
-      display: grid;
-      grid-template-columns: minmax(260px, .8fr) minmax(0, 1.7fr);
-      gap: 16px;
-      align-items: start;
-    }
+    .screen-form { padding: 16px 17px; margin-bottom: 16px; }
+    .screen-grid { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(0, 1.7fr); gap: 16px; align-items: start; }
     .screen-grid textarea { min-height: 120px; }
     .optional-fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 9px; }
     .screen-bottom { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-top: 10px; }
-    .job-info-box {
-      margin-top: 10px;
-      padding: 11px 12px;
-      border: 1px solid #eceff4;
-      border-radius: 8px;
-      background: #fafbfc;
-    }
+    .job-info-box { margin-top: 10px; padding: 11px 12px; border: 1px solid #eceff4; border-radius: 8px; background: #fafbfc; }
     .job-info-title { margin-bottom: 5px; font-size: 10px; font-weight: 700; }
-    .job-info-text {
-      color: #667286;
-      font-size: 10px;
-      line-height: 1.55;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-    }
-    .job-info-section + .job-info-section {
-      margin-top: 11px;
-      padding-top: 10px;
-      border-top: 1px solid #e8ebf0;
-    }
-
-    .workspace {
-      display: grid;
-      grid-template-columns: 300px minmax(0, 1fr);
-      gap: 16px;
-      align-items: start;
-    }
+    .job-info-text { color: #667286; font-size: 10px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .job-info-section + .job-info-section { margin-top: 11px; padding-top: 10px; border-top: 1px solid #e8ebf0; }
+    .workspace { display: grid; grid-template-columns: 310px minmax(0, 1fr); gap: 16px; align-items: start; }
     .candidate-list { max-height: 680px; overflow: auto; }
-    .candidate {
-      padding: 11px 15px;
-      border-bottom: 1px solid #eef0f4;
-      cursor: pointer;
-    }
+    .candidate { padding: 11px 15px; border-bottom: 1px solid #eef0f4; cursor: pointer; transition: background .15s; }
     .candidate:hover { background: #fafbfe; }
     .candidate.selected { background: #f2f4ff; box-shadow: inset 3px 0 var(--blue); }
-    .candidate-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-    .candidate-name {
-      min-width: 0;
-      margin: 0;
-      font-size: 12px;
-      font-weight: 720;
-      line-height: 1.4;
-      overflow-wrap: anywhere;
-    }
+    .candidate-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .candidate-name { min-width: 0; margin: 0; font-size: 12px; font-weight: 720; line-height: 1.4; overflow-wrap: anywhere; }
     .candidate-name.pass-text { color: var(--green); }
     .candidate-name.fail-text { color: var(--red); }
-    .decision-badge {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 62px;
-      padding: 5px 8px;
-      border-radius: 20px;
-      font-size: 9px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
+    .decision-badge { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 62px; padding: 5px 8px; border-radius: 20px; font-size: 9px; font-weight: 700; white-space: nowrap; }
     .decision-badge.pass { color: var(--green); background: var(--green-soft); }
     .decision-badge.fail { color: var(--red); background: var(--red-soft); }
     .decision-badge.pending { color: #687386; background: #f0f2f5; }
-    .candidate-meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-    .candidate-role {
-      min-width: 0;
-      color: #667286;
-      font-size: 10px;
-      line-height: 1.4;
-      overflow-wrap: anywhere;
-    }
-    .candidate-job {
-      margin-top: 5px;
-      color: #8993a3;
-      font-size: 9px;
-      line-height: 1.4;
-    }
-
-    .linkedin-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-shrink: 0;
-    }
-    .linkedin-link {
-      display: inline-flex;
-      width: 24px;
-      height: 24px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid currentColor;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: transform .12s, background .12s, opacity .12s;
-    }
+    .candidate-meta-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .candidate-role { min-width: 0; color: #667286; font-size: 10px; line-height: 1.4; overflow-wrap: anywhere; }
+    .candidate-job { margin-top: 5px; color: #8993a3; font-size: 9px; line-height: 1.4; }
+    .linkedin-links { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .linkedin-link { display: inline-flex; width: 24px; height: 24px; align-items: center; justify-content: center; border: 1px solid currentColor; border-radius: 6px; text-decoration: none; transition: transform .12s, background .12s, opacity .12s; }
     .linkedin-link:hover { transform: translateY(-1px); }
     .linkedin-link svg { width: 14px; height: 14px; fill: currentColor; }
     .linkedin-link.original { color: #c94141; background: #fff6f5; }
     .linkedin-link.derived { color: #258257; background: #f0faf4; }
-    .linkedin-link.disabled {
-      color: #aab2bf;
-      background: #f5f6f8;
-      border-color: #dfe3e9;
-      cursor: not-allowed;
-      opacity: .65;
-    }
-
-    .empty { padding: 28px 16px; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.6; }
-    .detail-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 17px 19px;
-      border-bottom: 1px solid var(--line);
-    }
+    .linkedin-link.disabled { color: #aab2bf; background: #f5f6f8; border-color: #dfe3e9; cursor: not-allowed; opacity: .65; }
+    .detail-head { display: flex; justify-content: space-between; gap: 14px; padding: 17px 19px; border-bottom: 1px solid var(--line); }
     .detail-name { margin: 0 0 4px; font-size: 16px; }
     .detail-role { color: var(--muted); font-size: 10px; }
     .decision-area { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
-    .decision-actions { display: flex; gap: 7px; align-items: flex-start; }
+    .decision-actions { display: flex; gap: 7px; }
     .detail-content { padding: 16px 19px 20px; }
-    .group-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 5px 0 8px;
-      font-size: 11px;
-      font-weight: 720;
-    }
+    .group-title { display: flex; justify-content: space-between; align-items: center; margin: 5px 0 8px; font-size: 11px; font-weight: 720; }
     .group-label { padding: 4px 7px; border-radius: 5px; color: #5362bd; background: var(--blue-soft); font-size: 9px; }
     .group-label.nice { color: var(--amber); background: var(--amber-soft); }
-    .criteria-item {
-      display: grid;
-      grid-template-columns: minmax(145px, .75fr) minmax(0, 1.6fr) auto;
-      gap: 11px;
-      align-items: start;
-      margin-bottom: 7px;
-      padding: 10px;
-      border: 1px solid #edf0f4;
-      border-radius: 8px;
-    }
+    .criteria-item { display: grid; grid-template-columns: minmax(145px, .75fr) minmax(0, 1.6fr) auto; gap: 11px; align-items: start; margin-bottom: 7px; padding: 10px; border: 1px solid #edf0f4; border-radius: 8px; }
     .criteria-name { font-size: 10px; font-weight: 650; line-height: 1.5; }
     .criteria-origin { display: block; margin-top: 3px; color: #929bab; font-size: 9px; font-weight: 400; }
     .evidence { color: #667286; font-size: 10px; line-height: 1.5; }
     .evidence.found { color: #376e55; }
     .evidence.missing { color: #818b9b; font-style: italic; }
-    .evidence-status {
-      padding: 5px 7px;
-      border-radius: 5px;
-      color: #677286;
-      background: #f1f3f6;
-      font-size: 9px;
-      white-space: nowrap;
-    }
+    .evidence-status { padding: 5px 7px; border-radius: 5px; color: #677286; background: #f1f3f6; font-size: 9px; white-space: nowrap; }
     .evidence-status.found { color: var(--green); background: var(--green-soft); }
     .raw-profile { margin-top: 17px; }
     .raw-profile summary { color: #657187; cursor: pointer; font-size: 10px; }
-    .raw-profile pre {
-      max-height: 190px;
-      overflow: auto;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      color: #748096;
-      background: #fafbfc;
-      font-size: 10px;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    .archive-actions {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 8px;
-      align-items: end;
-      margin-top: 18px;
-      padding-top: 15px;
-      border-top: 1px solid var(--line);
-    }
+    .raw-profile pre { max-height: 190px; overflow: auto; padding: 10px; border: 1px solid var(--line); border-radius: 7px; color: #748096; background: #fafbfc; font-size: 10px; white-space: pre-wrap; word-break: break-word; }
+    .archive-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: end; margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line); }
     .archive-actions .field { margin: 0; }
     .archive-actions .field label { font-size: 10px; }
     .archive-buttons { display: flex; gap: 7px; }
     .archive-date { margin-top: 5px; color: #929bab; font-size: 9px; }
-
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      z-index: 10;
-      padding: 10px 14px;
-      border-radius: 8px;
-      color: white;
-      background: #202b3c;
-      font-size: 11px;
-      opacity: 0;
-      pointer-events: none;
-      transform: translate(-50%, 15px);
-      transition: .2s;
-    }
+    .toast { position: fixed; bottom: 20px; left: 50%; z-index: 10; padding: 10px 14px; border-radius: 8px; color: white; background: #202b3c; font-size: 11px; opacity: 0; pointer-events: none; transform: translate(-50%, 15px); transition: .2s; }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
-
     @media (max-width: 1000px) {
       .app { grid-template-columns: 68px minmax(0, 1fr); }
       .sidebar { align-items: center; padding: 20px 10px; }
@@ -439,7 +162,6 @@
       .sidebar { display: none; }
       .topbar { height: 55px; padding: 0 13px; }
       .content { padding: 17px 11px; }
-      .page-heading { flex-direction: column; }
       .job-card { flex-direction: column; }
       .job-actions { align-self: flex-start; }
       .screen-bottom { align-items: flex-start; flex-direction: column; }
@@ -467,13 +189,11 @@
     <main>
       <header class="topbar">
         <div class="breadcrumb">Workspace / <strong id="breadcrumb">Tổng quan</strong></div>
-        <div class="user">Recruiter</div>
+        <div class="user"><span class="user-avatar">TH</span><span>Trần Hoài Nam</span></div>
       </header>
 
       <div class="content">
-        <div class="page-heading">
-          <h1 id="pageTitle">Thư viện JD</h1>
-        </div>
+        <div class="page-heading"><h1 id="pageTitle">Thư viện JD</h1></div>
 
         <section id="overviewPage">
           <div class="overview-grid">
@@ -582,6 +302,8 @@
   <div class="toast" id="toast"></div>
 
   <script>
+    "use strict";
+
     const STORAGE_JOBS = "talent-desk-jobs-v2";
     const STORAGE_CANDIDATES = "talent-desk-candidates-v2";
 
@@ -608,7 +330,9 @@
     function loadData(key, fallback) {
       try {
         const value = localStorage.getItem(key);
-        return value ? JSON.parse(value) : fallback;
+        if (!value) return fallback;
+        const parsed = JSON.parse(value);
+        return Array.isArray(parsed) ? parsed : fallback;
       } catch {
         return fallback;
       }
@@ -629,10 +353,19 @@
       }[char]));
     }
 
+    function normalize(text) {
+      return String(text || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D")
+        .toLowerCase();
+    }
+
     function displayJobName(job) {
       if (!job) return "JD đã bị xóa";
-      const company = (job.company || "").trim();
-      const position = (job.name || "").trim();
+      const company = String(job.company || "").trim();
+      const position = String(job.name || "").trim();
       if (company && position) return `${company} - ${position}`;
       return company || position || "JD chưa đặt tên";
     }
@@ -647,13 +380,14 @@
       toast.textContent = message;
       toast.classList.add("show");
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove("show"), 2300);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
     }
 
     function setPage(page) {
-      document.getElementById("overviewPage").classList.toggle("hidden", page !== "overview");
-      document.getElementById("screeningPage").classList.toggle("hidden", page !== "screening");
-      document.getElementById("archivePage").classList.toggle("hidden", page !== "archive");
+      const pages = ["overview", "screening", "archive"];
+      pages.forEach(name => {
+        document.getElementById(`${name}Page`).classList.toggle("hidden", name !== page);
+      });
 
       const labels = {
         overview: ["Tổng quan", "Thư viện JD"],
@@ -671,10 +405,6 @@
       if (page === "archive") renderArchive();
     }
 
-    document.querySelectorAll(".nav-item").forEach(button => {
-      button.addEventListener("click", () => setPage(button.dataset.page));
-    });
-
     function inferType(text, defaultType = "required") {
       if (/nice.to.have|ưu tiên|lợi thế|điểm cộng|preferred/i.test(text)) return "nice";
       if (/bắt buộc|required|mandatory|must.have/i.test(text)) return "required";
@@ -682,13 +412,13 @@
     }
 
     function cleanCriterion(text) {
-      return text
+      return String(text || "")
         .replace(/^\s*(bắt buộc|ưu tiên|nice.to.have|must.have|required|mandatory)\s*[:\-–]?\s*/i, "")
         .trim();
     }
 
     function parseJD(text) {
-      return text
+      return String(text || "")
         .split(/\n|[;•]+/)
         .map(line => line.replace(/^\s*[-*]\s*/, "").trim())
         .filter(Boolean)
@@ -698,7 +428,6 @@
 
     function renderCriteriaEditor(criteria) {
       const editor = document.getElementById("criteriaEditor");
-
       if (!criteria.length) {
         editor.innerHTML = `<div class="muted">Nhập JD để tạo danh sách tiêu chí gợi ý.</div>`;
         return;
@@ -715,16 +444,14 @@
       `).join("");
     }
 
-    document.getElementById("jobText").addEventListener("input", event => {
-      renderCriteriaEditor(parseJD(event.target.value));
-    });
-
     function criteriaFromEditor() {
-      return [...document.querySelectorAll("[data-criterion-text]")].map(input => {
-        const index = input.dataset.criterionText;
-        const type = document.querySelector(`[data-criterion-type="${index}"]`)?.value || "required";
-        return { text: input.value.trim(), type };
-      }).filter(item => item.text);
+      return Array.from(document.querySelectorAll("[data-criterion-text]"))
+        .map(input => {
+          const index = input.dataset.criterionText;
+          const typeSelect = document.querySelector(`[data-criterion-type="${index}"]`);
+          return { text: input.value.trim(), type: typeSelect ? typeSelect.value : "required" };
+        })
+        .filter(item => item.text);
     }
 
     function resetJobForm() {
@@ -736,53 +463,25 @@
       renderCriteriaEditor([]);
     }
 
-    document.getElementById("clearJobForm").addEventListener("click", resetJobForm);
-    document.getElementById("cancelEdit").addEventListener("click", resetJobForm);
-
-    document.getElementById("jobForm").addEventListener("submit", event => {
-      event.preventDefault();
-
-      const id = document.getElementById("editingJobId").value;
-      const job = {
-        id: id || `job-${Date.now()}`,
-        name: document.getElementById("jobName").value.trim(),
-        company: document.getElementById("jobCompany").value.trim(),
-        jd: document.getElementById("jobText").value.trim(),
-        feedback: document.getElementById("jobFeedback").value.trim(),
-        criteria: criteriaFromEditor()
-      };
-
-      const existingIndex = jobs.findIndex(item => item.id === id);
-      if (existingIndex >= 0) jobs[existingIndex] = job;
-      else jobs.unshift(job);
-
-      saveData();
-      renderJobs();
-      resetJobForm();
-      showToast("Đã lưu JD và feedback.");
-    });
-
     function editJob(id) {
       const job = jobs.find(item => item.id === id);
       if (!job) return;
 
       document.getElementById("editingJobId").value = job.id;
-      document.getElementById("jobName").value = job.name;
+      document.getElementById("jobName").value = job.name || "";
       document.getElementById("jobCompany").value = job.company || "";
-      document.getElementById("jobText").value = job.jd;
+      document.getElementById("jobText").value = job.jd || "";
       document.getElementById("jobFeedback").value = job.feedback || "";
       document.getElementById("jobFormTitle").textContent = "Chỉnh sửa JD và feedback";
       document.getElementById("saveJobButton").textContent = "Lưu thay đổi";
       document.getElementById("cancelEdit").classList.remove("hidden");
-      renderCriteriaEditor(job.criteria?.length ? job.criteria : parseJD(job.jd));
+      renderCriteriaEditor(Array.isArray(job.criteria) && job.criteria.length ? job.criteria : parseJD(job.jd));
       document.getElementById("jobName").focus();
     }
 
     function deleteJob(id) {
       const job = jobs.find(item => item.id === id);
-      if (!job) return;
-
-      if (!confirm(`Xóa JD "${displayJobName(job)}" và các hồ sơ liên quan?`)) return;
+      if (!job || !confirm(`Xóa JD "${displayJobName(job)}" và các hồ sơ liên quan?`)) return;
 
       jobs = jobs.filter(item => item.id !== id);
       candidates = candidates.filter(item => item.jobId !== id);
@@ -794,17 +493,16 @@
     }
 
     function renderJobs() {
-      document.getElementById("jobCount").textContent = `${jobs.length} JD`;
       const list = document.getElementById("jobList");
+      document.getElementById("jobCount").textContent = `${jobs.length} JD`;
 
       if (!jobs.length) {
         list.innerHTML = `<div class="empty">Chưa có JD. Thêm JD mới bằng form bên cạnh.</div>`;
       } else {
         list.innerHTML = jobs.map(job => {
-          const criteria = job.criteria || [];
+          const criteria = Array.isArray(job.criteria) ? job.criteria : [];
           const requiredCount = criteria.filter(item => item.type === "required").length;
           const niceCount = criteria.filter(item => item.type === "nice").length;
-
           return `
             <article class="job-card">
               <div>
@@ -816,8 +514,7 @@
                 <button class="button" data-edit-job="${escapeHTML(job.id)}">Sửa</button>
                 <button class="button" data-delete-job="${escapeHTML(job.id)}">Xóa</button>
               </div>
-            </article>
-          `;
+            </article>`;
         }).join("");
       }
 
@@ -830,11 +527,9 @@
 
       const select = document.getElementById("screenJob");
       const previous = select.value;
-
       select.innerHTML = jobs.map(job =>
         `<option value="${escapeHTML(job.id)}">${escapeHTML(displayJobName(job))}</option>`
       ).join("");
-
       if (jobs.some(job => job.id === previous)) select.value = previous;
       updateScreenJobInfo();
     }
@@ -842,12 +537,10 @@
     function updateScreenJobInfo() {
       const job = jobs.find(item => item.id === document.getElementById("screenJob").value);
       const info = document.getElementById("screenJobInfo");
-
       if (!job) {
         info.innerHTML = `<div class="muted">Hãy tạo JD trước khi screening.</div>`;
         return;
       }
-
       info.innerHTML = `
         <div class="job-info-section">
           <div class="job-info-title">JD</div>
@@ -856,16 +549,8 @@
         <div class="job-info-section">
           <div class="job-info-title">Feedback khách hàng</div>
           <div class="job-info-text">${escapeHTML(job.feedback || "JD này chưa có feedback.")}</div>
-        </div>
-      `;
+        </div>`;
     }
-
-    document.getElementById("screenJob").addEventListener("change", () => {
-      selectedCandidateId = null;
-      updateScreenJobInfo();
-      renderCandidateList();
-      renderSelectedCandidate();
-    });
 
     function normalize(text) {
       return String(text || "")
@@ -891,85 +576,54 @@
     }
 
     function findEvidence(criterion, profile) {
-      const lines = profile.split(/\n/).map(line => line.trim()).filter(Boolean);
+      const lines = String(profile || "").split(/\n/).map(line => line.trim()).filter(Boolean);
       const keywords = [...new Set(tokens(criterion))];
       if (!keywords.length) return null;
-
       let best = null;
       let bestScore = 0;
 
       for (const line of lines) {
-        const normalizedLine = normalize(line);
-        const score = keywords.filter(word => normalizedLine.includes(word)).length;
-
+        const score = keywords.filter(word => normalize(line).includes(word)).length;
         if (score > bestScore) {
           best = line;
           bestScore = score;
         }
       }
-
-      const threshold = keywords.length >= 3 ? 2 : 1;
-      return bestScore >= threshold ? best : null;
+      return bestScore >= (keywords.length >= 3 ? 2 : 1) ? best : null;
     }
 
     function extractLinkedInUrl(text) {
-      const pattern = /(?:https?:\/\/)?(?:www\.)?linkedin\.com\/[^\s<>"']+/ig;
-      const match = pattern.exec(text);
-      if (!match) return null;
-
+      const match = String(text || "").match(/(?:https?:\/\/)?(?:www\.)?linkedin\.com\/[^\s<>"']+/i);
+      if (!match) return "";
       let url = match[0].replace(/[.,;:!?)}\]]+$/, "");
       if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
       return url;
     }
 
-    function getLinkedInPath(url) {
-      try {
-        const parsed = new URL(url);
-        if (!/(^|\.)linkedin\.com$/i.test(parsed.hostname)) return null;
-        return { parsed, path: parsed.pathname };
-      } catch {
-        return null;
-      }
-    }
-
     function deriveLinkedInUrl(originalUrl) {
-      if (!originalUrl) return null;
-
-      const result = getLinkedInPath(originalUrl);
-      if (!result) return null;
-
-      const { parsed } = result;
-      let path = result.path;
-
-      if (/^\/in\/[^/]+\/?/i.test(path)) return parsed.href;
-
-      if (/^\/sales\/lead\//i.test(path)) {
-        path = path.replace(/,NAME_SEARCH.*$/i, "");
-        path = path.replace(/^\/sales\/lead\//i, "/in/");
-        if (!/^\/in\/[^/]+/i.test(path)) return null;
+      if (!originalUrl) return "";
+      try {
+        const parsed = new URL(originalUrl);
+        if (!/(^|\.)linkedin\.com$/i.test(parsed.hostname)) return "";
+        let path = parsed.pathname;
+        if (/^\/in\/[^/]+\/?$/i.test(path)) return parsed.href;
+        if (/^\/sales\/lead\//i.test(path)) {
+          path = path.replace(/,NAME_SEARCH.*$/i, "").replace(/^\/sales\/lead\//i, "/in/");
+        } else if (/^\/talent\/profile\//i.test(path)) {
+          path = path.replace(/^\/talent\/profile\//i, "/in/");
+        } else return "";
+        if (!/^\/in\/[^/]+/i.test(path)) return "";
         parsed.pathname = path;
         parsed.search = "";
         parsed.hash = "";
         return parsed.href;
-      }
-
-      if (/^\/talent\/profile\//i.test(path)) {
-        path = path.replace(/^\/talent\/profile\//i, "/in/");
-        if (!/^\/in\/[^/]+/i.test(path)) return null;
-        parsed.pathname = path;
-        parsed.search = "";
-        parsed.hash = "";
-        return parsed.href;
-      }
-
-      return null;
+      } catch { return ""; }
     }
 
     function parseProfile(profile) {
-      const lines = profile.split(/\n/).map(line => line.trim()).filter(Boolean);
+      const lines = String(profile || "").split(/\n/).map(line => line.trim()).filter(Boolean);
       let name = lines[0] || "Ứng viên chưa rõ tên";
       name = name.replace(/\s*[|·]\s*(1st|2nd|3rd|\d+(st|nd|rd)).*$/i, "").trim();
-
       let role = "";
       let company = "";
 
@@ -983,53 +637,31 @@
       }
 
       if (!role) {
-        const separated = lines.find(line => line.includes("·") || line.includes("|"));
-        if (separated && !separated.includes("@")) {
+        const separated = lines.find(line => (line.includes("·") || line.includes("|")) && !line.includes("@"));
+        if (separated) {
           const parts = separated.split(/[·|]/).map(part => part.trim()).filter(Boolean);
-          if (parts.length >= 2) {
-            role = parts[0];
-            company = parts[1];
-          }
+          if (parts.length >= 2) [role, company] = parts;
         }
       }
-
-      return {
-        name,
-        role: role || "Chưa nhận diện chức vụ",
-        company: company || "Chưa nhận diện công ty"
-      };
+      return { name, role: role || "Chưa nhận diện chức vụ", company: company || "Chưa nhận diện công ty" };
     }
 
     function feedbackCriteria(feedback) {
       if (!feedback || !feedback.trim()) return [];
-
-      return feedback
-        .split(/\n|[;•]+|(?<=[.!?])\s+/)
-        .map(text => text.trim())
-        .filter(text => text.length > 3)
-        .map(text => ({
-          text: cleanCriterion(text),
-          type: inferType(text, "nice"),
-          origin: "Feedback khách hàng"
-        }));
+      return feedback.split(/\n|[;•]+|[.!?]\s+/).map(text => text.trim()).filter(text => text.length > 3)
+        .map(text => ({ text: cleanCriterion(text), type: inferType(text, "nice"), origin: "Feedback khách hàng" }));
     }
 
     function getAllCriteria(job) {
-      const jdCriteria = (job.criteria?.length ? job.criteria : parseJD(job.jd))
-        .map(item => ({ ...item, origin: "JD" }));
-
-      return [...jdCriteria, ...feedbackCriteria(job.feedback)];
+      const criteria = Array.isArray(job.criteria) && job.criteria.length ? job.criteria : parseJD(job.jd);
+      return [...criteria.map(item => ({ ...item, origin: "JD" })), ...feedbackCriteria(job.feedback)];
     }
 
     function analyzeProfile() {
       const jobId = document.getElementById("screenJob").value;
       const job = jobs.find(item => item.id === jobId);
       const raw = document.getElementById("profileText").value.trim();
-
-      if (!job) {
-        showToast("Hãy thêm hoặc chọn một JD trước.");
-        return;
-      }
+      if (!job) return showToast("Hãy thêm hoặc chọn một JD trước.");
       if (!raw) {
         showToast("Hãy dán profile ứng viên trước.");
         document.getElementById("profileText").focus();
@@ -1038,26 +670,16 @@
 
       const parsed = parseProfile(raw);
       const originalLinkedInUrl = extractLinkedInUrl(raw);
-      const derivedLinkedInUrl = deriveLinkedInUrl(originalLinkedInUrl);
-
-      const name = document.getElementById("candidateName").value.trim() || parsed.name;
-      const role = document.getElementById("candidateRole").value.trim() || parsed.role;
-      const company = document.getElementById("candidateCompany").value.trim() || parsed.company;
-      const criteria = getAllCriteria(job).map(item => ({
-        ...item,
-        evidence: findEvidence(item.text, raw)
-      }));
-
       const candidate = {
         id: `candidate-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
         jobId,
-        name,
-        role,
-        company,
+        name: document.getElementById("candidateName").value.trim() || parsed.name,
+        role: document.getElementById("candidateRole").value.trim() || parsed.role,
+        company: document.getElementById("candidateCompany").value.trim() || parsed.company,
         raw,
         originalLinkedInUrl,
-        derivedLinkedInUrl,
-        criteria,
+        derivedLinkedInUrl: deriveLinkedInUrl(originalLinkedInUrl),
+        criteria: getAllCriteria(job).map(item => ({ ...item, evidence: findEvidence(item.text, raw) })),
         decision: null,
         createdAt: new Date().toISOString()
       };
@@ -1065,137 +687,71 @@
       candidates.unshift(candidate);
       selectedCandidateId = candidate.id;
       saveData();
-
       document.getElementById("profileText").value = "";
       document.getElementById("candidateName").value = "";
       document.getElementById("candidateRole").value = "";
       document.getElementById("candidateCompany").value = "";
-
       renderScreening();
-
-      if (!originalLinkedInUrl) {
-        showToast("Đã tạo kết quả đối chiếu. Không tìm thấy LinkedIn URL trong profile.");
-      } else if (!derivedLinkedInUrl) {
-        showToast("Đã lưu URL gốc. URL này không thuộc mẫu có thể suy ra.");
-      } else {
-        showToast("Đã tạo kết quả đối chiếu và lưu cả hai LinkedIn URL.");
-      }
+      showToast(!originalLinkedInUrl ? "Đã screening. Không tìm thấy LinkedIn URL." : "Đã lưu hồ sơ và LinkedIn URL.");
     }
 
-    document.getElementById("analyzeButton").addEventListener("click", analyzeProfile);
+    const linkedinIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.85 0 1.55-.68 1.55-1.52V3.52c0-.84-.7-1.52-1.55-1.52zM7.08 18.9H4.12V9.37h2.96v9.53zM5.6 8.07a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42zm13.3 10.83h-2.95v-4.64c0-1.1-.02-2.5-1.53-2.5-1.53 0-1.76 1.2-1.76 2.42v4.72H9.7V9.37h2.84v1.3h.04c.4-.75 1.36-1.53 2.8-1.53 3 0 3.56 1.98 3.56 4.55v5.21z"/></svg>`;
 
-    function getVisibleCandidates() {
+    function linkedInLink(url, kind, label) {
+      if (!url) return `<span class="linkedin-link ${kind} disabled" title="${escapeHTML(label)} — chưa có URL" aria-label="${escapeHTML(label)}">${linkedinIcon}</span>`;
+      return `<a class="linkedin-link ${kind}" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" title="${escapeHTML(label)}" aria-label="${escapeHTML(label)}" data-candidate-link>${linkedinIcon}</a>`;
+    }
+
+    function candidateLinkedInLinks(candidate) {
+      return `<div class="linkedin-links" aria-label="LinkedIn links">${linkedInLink(candidate.originalLinkedInUrl, "original", "Mở URL gốc")}${linkedInLink(candidate.derivedLinkedInUrl, "derived", "Mở URL suy ra")}</div>`;
+    }
+
+    function visibleCandidates() {
       const jobId = document.getElementById("screenJob").value;
       return candidates.filter(candidate => candidate.jobId === jobId && !candidate.archivedAt);
     }
 
-    const linkedInIcon = `
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.85 0 1.55-.68 1.55-1.52V3.52c0-.84-.7-1.52-1.55-1.52zM7.08 18.9H4.12V9.37h2.96v9.53zM5.6 8.07a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42zm13.3 10.83h-2.95v-4.64c0-1.1-.02-2.5-1.53-2.5-1.53 0-1.76 1.2-1.76 2.42v4.72H9.7V9.37h2.84v1.3h.04c.4-.75 1.36-1.53 2.8-1.53 3 0 3.56 1.98 3.56 4.55v5.21z"/>
-      </svg>
-    `;
-
-    function linkedInLink(url, kind, label) {
-      const className = url ? `linkedin-link ${kind}` : `linkedin-link ${kind} disabled`;
-      const title = url ? label : `${label} — chưa có URL`;
-
-      if (!url) {
-        return `<span class="${className}" title="${escapeHTML(title)}" aria-label="${escapeHTML(title)}">${linkedInIcon}</span>`;
-      }
-
-      return `
-        <a
-          class="${className}"
-          href="${escapeHTML(url)}"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="${escapeHTML(label)}"
-          aria-label="${escapeHTML(label)}"
-          data-candidate-link
-        >${linkedInIcon}</a>
-      `;
-    }
-
-    function candidateLinkedInLinks(candidate) {
-      return `
-        <div class="linkedin-links" aria-label="LinkedIn links">
-          ${linkedInLink(candidate.originalLinkedInUrl, "original", "Mở LinkedIn URL gốc")}
-          ${linkedInLink(candidate.derivedLinkedInUrl, "derived", "Mở LinkedIn URL suy ra")}
-        </div>
-      `;
-    }
-
-    function decisionDisplay(candidate) {
-      if (candidate.decision === "pass") {
-        return { className: "pass", text: "Đạt", nameClass: "pass-text" };
-      }
-      if (candidate.decision === "fail") {
-        return { className: "fail", text: "Không đạt", nameClass: "fail-text" };
-      }
-      return { className: "pending", text: "Chưa đánh giá", nameClass: "" };
-    }
-
     function renderCandidateList() {
-      const visible = getVisibleCandidates();
-      document.getElementById("candidateCount").textContent = `${visible.length} hồ sơ`;
       const list = document.getElementById("candidateList");
-
+      const visible = visibleCandidates();
+      document.getElementById("candidateCount").textContent = `${visible.length} hồ sơ`;
       if (!visible.length) {
         list.innerHTML = `<div class="empty">Chưa có hồ sơ screening cho JD này.</div>`;
         return;
       }
 
       list.innerHTML = visible.map(candidate => {
-        const decision = decisionDisplay(candidate);
-        return `
-          <article class="candidate ${candidate.id === selectedCandidateId ? "selected" : ""}" data-candidate-id="${escapeHTML(candidate.id)}">
-            <div class="candidate-top">
-              <div class="candidate-name ${decision.nameClass}">${escapeHTML(candidate.name)}</div>
-              <span class="decision-badge ${decision.className}">${decision.text}</span>
-            </div>
-            <div class="candidate-meta-row">
-              <div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-              ${candidateLinkedInLinks(candidate)}
-            </div>
-          </article>
-        `;
+        const state = candidate.decision === "pass"
+          ? { badge: "pass", label: "Đạt", name: "pass-text" }
+          : candidate.decision === "fail"
+            ? { badge: "fail", label: "Không đạt", name: "fail-text" }
+            : { badge: "pending", label: "Chưa đánh giá", name: "" };
+        return `<article class="candidate ${candidate.id === selectedCandidateId ? "selected" : ""}" data-candidate-id="${escapeHTML(candidate.id)}">
+          <div class="candidate-top"><div class="candidate-name ${state.name}">${escapeHTML(candidate.name)}</div><span class="decision-badge ${state.badge}">${state.label}</span></div>
+          <div class="candidate-meta-row"><div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>${candidateLinkedInLinks(candidate)}</div>
+        </article>`;
       }).join("");
 
-      list.querySelectorAll("[data-candidate-id]").forEach(element => {
-        element.addEventListener("click", event => {
-          if (event.target.closest("[data-candidate-link]")) return;
-          selectedCandidateId = element.dataset.candidateId;
-          renderCandidateList();
-          renderSelectedCandidate();
-        });
-      });
+      list.querySelectorAll("[data-candidate-id]").forEach(element => element.addEventListener("click", event => {
+        if (event.target.closest("[data-candidate-link]")) return;
+        selectedCandidateId = element.dataset.candidateId;
+        renderCandidateList();
+        renderSelectedCandidate();
+      }));
     }
 
     function criterionMarkup(item) {
       const evidence = item.evidence;
-
-      return `
-        <div class="criteria-item">
-          <div class="criteria-name">
-            ${escapeHTML(item.text)}
-            <span class="criteria-origin">${escapeHTML(item.origin || "JD")}</span>
-          </div>
-          <div class="evidence ${evidence ? "found" : "missing"}">
-            ${evidence
-              ? `Bằng chứng trong profile: “${escapeHTML(evidence)}”`
-              : "Chưa tìm thấy bằng chứng rõ ràng trong phần profile đã dán."}
-          </div>
-          <span class="evidence-status ${evidence ? "found" : ""}">
-            ${evidence ? "Có dấu hiệu" : "Chưa thấy"}
-          </span>
-        </div>
-      `;
+      return `<div class="criteria-item">
+        <div class="criteria-name">${escapeHTML(item.text)}<span class="criteria-origin">${escapeHTML(item.origin || "JD")}</span></div>
+        <div class="evidence ${evidence ? "found" : "missing"}">${evidence ? `Bằng chứng trong profile: “${escapeHTML(evidence)}”` : "Chưa tìm thấy bằng chứng rõ ràng trong phần profile đã dán."}</div>
+        <span class="evidence-status ${evidence ? "found" : ""}">${evidence ? "Có dấu hiệu" : "Chưa thấy"}</span>
+      </div>`;
     }
 
     function setDecision(id, decision) {
       const candidate = candidates.find(item => item.id === id);
       if (!candidate) return;
-
       candidate.decision = decision;
       saveData();
       renderCandidateList();
@@ -1205,90 +761,48 @@
 
     function archiveCandidate(id) {
       const candidate = candidates.find(item => item.id === id && !item.archivedAt);
-      if (!candidate) return;
-
+      if (!candidate || !confirm(`Bạn có chắc muốn chuyển ${candidate.name} vào lưu trữ tạm thời?`)) return;
       const job = jobs.find(item => item.id === candidate.jobId);
-      const confirmed = confirm(`Bạn có chắc muốn chuyển ${candidate.name} vào lưu trữ tạm thời?`);
-      if (!confirmed) return;
-
       candidate.archivedAt = new Date().toISOString();
       candidate.archivedJobName = displayJobName(job);
-      candidate.archivedJobSnapshot = job ? {
-        name: job.name,
-        company: job.company,
-        jd: job.jd,
-        feedback: job.feedback,
-        criteria: job.criteria
-      } : null;
-
-      const nextCandidate = getVisibleCandidates().find(item => item.id !== candidate.id);
-      selectedCandidateId = nextCandidate?.id || null;
+      candidate.archivedJobSnapshot = job ? { name: job.name, company: job.company, jd: job.jd, feedback: job.feedback, criteria: job.criteria } : null;
+      selectedCandidateId = null;
       selectedArchivedCandidateId = candidate.id;
-
       saveData();
       renderScreening();
       renderArchive();
-      showToast("Đã chuyển ứng viên vào lưu trữ tạm thời.");
+      showToast("Đã chuyển ứng viên vào lưu trữ.");
     }
 
     function renderSelectedCandidate() {
       const panel = document.getElementById("detailPanel");
       const jobId = document.getElementById("screenJob").value;
-      const candidate = candidates.find(item =>
-        item.id === selectedCandidateId &&
-        item.jobId === jobId &&
-        !item.archivedAt
-      );
-
+      const candidate = candidates.find(item => item.id === selectedCandidateId && item.jobId === jobId && !item.archivedAt);
       if (!candidate) {
         panel.innerHTML = `<div class="empty">Chọn ứng viên trong danh sách để xem đối chiếu chi tiết.</div>`;
         return;
       }
 
-      const criteria = candidate.criteria || [];
+      const criteria = Array.isArray(candidate.criteria) ? candidate.criteria : [];
       const required = criteria.filter(item => item.type === "required");
       const nice = criteria.filter(item => item.type === "nice");
-      const passClass = candidate.decision === "pass" ? "selected-pass" : "";
-      const failClass = candidate.decision === "fail" ? "selected-fail" : "";
-
-      panel.innerHTML = `
-        <div class="detail-head">
-          <div>
-            <h2 class="detail-name">${escapeHTML(candidate.name)}</h2>
-            <div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
+      panel.innerHTML = `<div class="detail-head">
+        <div><h2 class="detail-name">${escapeHTML(candidate.name)}</h2><div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div></div>
+        <div class="decision-area">
+          <div class="decision-actions">
+            <button class="button pass ${candidate.decision === "pass" ? "selected-pass" : ""}" id="markPass" type="button">Đạt</button>
+            <button class="button fail ${candidate.decision === "fail" ? "selected-fail" : ""}" id="markFail" type="button">Không đạt</button>
           </div>
-          <div class="decision-area">
-            <div class="decision-actions">
-              <button class="button pass ${passClass}" id="markPass" type="button">Đạt</button>
-              <button class="button fail ${failClass}" id="markFail" type="button">Không đạt</button>
-            </div>
-            <button class="button danger" id="archiveCandidate" type="button">Xóa ứng viên</button>
-            ${candidateLinkedInLinks(candidate)}
-          </div>
+          <button class="button danger" id="archiveCandidate" type="button">Xóa ứng viên</button>
+          ${candidateLinkedInLinks(candidate)}
         </div>
-        <div class="detail-content">
-          <div class="group-title">
-            <span>Tiêu chí bắt buộc</span>
-            <span class="group-label">${required.length} tiêu chí</span>
-          </div>
-          ${required.length
-            ? required.map(criterionMarkup).join("")
-            : `<div class="muted">JD chưa có tiêu chí bắt buộc.</div>`}
-
-          <div class="group-title">
-            <span>Nice to have</span>
-            <span class="group-label nice">${nice.length} tiêu chí</span>
-          </div>
-          ${nice.length
-            ? nice.map(criterionMarkup).join("")
-            : `<div class="muted">JD hoặc feedback chưa có tiêu chí ưu tiên.</div>`}
-
-          <details class="raw-profile">
-            <summary>Xem profile gốc đã dán</summary>
-            <pre>${escapeHTML(candidate.raw)}</pre>
-          </details>
-        </div>
-      `;
+      </div><div class="detail-content">
+        <div class="group-title"><span>Tiêu chí bắt buộc</span><span class="group-label">${required.length} tiêu chí</span></div>
+        ${required.length ? required.map(criterionMarkup).join("") : `<div class="muted">JD chưa có tiêu chí bắt buộc.</div>`}
+        <div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length} tiêu chí</span></div>
+        ${nice.length ? nice.map(criterionMarkup).join("") : `<div class="muted">JD hoặc feedback chưa có tiêu chí ưu tiên.</div>`}
+        <details class="raw-profile"><summary>Xem profile gốc đã dán</summary><pre>${escapeHTML(candidate.raw || "")}</pre></details>
+      </div>`;
 
       document.getElementById("markPass").addEventListener("click", () => setDecision(candidate.id, "pass"));
       document.getElementById("markFail").addEventListener("click", () => setDecision(candidate.id, "fail"));
@@ -1297,17 +811,12 @@
 
     function renderScreening() {
       renderJobs();
-
       const hasJobs = jobs.length > 0;
       document.getElementById("screenJob").disabled = !hasJobs;
       document.getElementById("profileText").disabled = !hasJobs;
       document.getElementById("analyzeButton").disabled = !hasJobs;
-
-      const visible = getVisibleCandidates();
-      if (!visible.some(candidate => candidate.id === selectedCandidateId)) {
-        selectedCandidateId = visible[0]?.id || null;
-      }
-
+      const visible = visibleCandidates();
+      if (!visible.some(candidate => candidate.id === selectedCandidateId)) selectedCandidateId = visible[0]?.id || null;
       renderCandidateList();
       renderSelectedCandidate();
     }
@@ -1320,127 +829,56 @@
       const archived = getArchivedCandidates();
       document.getElementById("archiveCount").textContent = `${archived.length} hồ sơ`;
       const list = document.getElementById("archiveList");
-
       if (!archived.length) {
         list.innerHTML = `<div class="empty">Chưa có ứng viên trong lưu trữ.</div>`;
         selectedArchivedCandidateId = null;
-        document.getElementById("archiveDetailPanel").innerHTML =
-          `<div class="empty">Ứng viên được chuyển vào lưu trữ sẽ xuất hiện ở đây.</div>`;
+        document.getElementById("archiveDetailPanel").innerHTML = `<div class="empty">Ứng viên được lưu trữ sẽ xuất hiện ở đây.</div>`;
         return;
       }
-
-      if (!archived.some(candidate => candidate.id === selectedArchivedCandidateId)) {
-        selectedArchivedCandidateId = archived[0].id;
-      }
-
-      list.innerHTML = archived.map(candidate => `
-        <article class="candidate ${candidate.id === selectedArchivedCandidateId ? "selected" : ""}" data-archived-id="${escapeHTML(candidate.id)}">
-          <div class="candidate-top">
-            <div class="candidate-name">${escapeHTML(candidate.name)}</div>
-            <span class="decision-badge pending">Lưu trữ</span>
-          </div>
-          <div class="candidate-meta-row">
-            <div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            ${candidateLinkedInLinks(candidate)}
-          </div>
-          <div class="candidate-job">${escapeHTML(candidateJobName(candidate))}</div>
-        </article>
-      `).join("");
-
-      list.querySelectorAll("[data-archived-id]").forEach(element => {
-        element.addEventListener("click", event => {
-          if (event.target.closest("[data-candidate-link]")) return;
-          selectedArchivedCandidateId = element.dataset.archivedId;
-          renderArchive();
-        });
-      });
-
+      if (!archived.some(candidate => candidate.id === selectedArchivedCandidateId)) selectedArchivedCandidateId = archived[0].id;
+      list.innerHTML = archived.map(candidate => `<article class="candidate ${candidate.id === selectedArchivedCandidateId ? "selected" : ""}" data-archived-id="${escapeHTML(candidate.id)}">
+        <div class="candidate-top"><div class="candidate-name">${escapeHTML(candidate.name)}</div><span class="decision-badge pending">Lưu trữ</span></div>
+        <div class="candidate-meta-row"><div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>${candidateLinkedInLinks(candidate)}</div>
+        <div class="candidate-job">${escapeHTML(candidateJobName(candidate))}</div>
+      </article>`).join("");
+      list.querySelectorAll("[data-archived-id]").forEach(element => element.addEventListener("click", event => {
+        if (event.target.closest("[data-candidate-link]")) return;
+        selectedArchivedCandidateId = element.dataset.archivedId;
+        renderArchive();
+      }));
       renderArchivedDetails();
     }
 
     function renderArchivedDetails() {
       const panel = document.getElementById("archiveDetailPanel");
-      const candidate = candidates.find(item =>
-        item.id === selectedArchivedCandidateId && item.archivedAt
-      );
-
+      const candidate = candidates.find(item => item.id === selectedArchivedCandidateId && item.archivedAt);
       if (!candidate) {
         panel.innerHTML = `<div class="empty">Chọn ứng viên đã lưu trữ để xem thông tin.</div>`;
         return;
       }
-
       const currentJob = jobs.find(item => item.id === candidate.jobId);
-      const snapshot = candidate.archivedJobSnapshot || null;
-      const archivedJobTitle = candidate.archivedJobName || displayJobName(currentJob);
-      const jdText = currentJob?.jd || snapshot?.jd || "Không còn nội dung JD.";
-      const feedbackText = currentJob?.feedback || snapshot?.feedback || "Không có feedback đã lưu.";
-      const archivedDate = new Date(candidate.archivedAt).toLocaleString();
-
-      const jobOptions = jobs.length
-        ? jobs.map(job => `
-            <option value="${escapeHTML(job.id)}" ${job.id === candidate.jobId ? "selected" : ""}>
-              ${escapeHTML(displayJobName(job))}
-            </option>
-          `).join("")
-        : `<option value="">Chưa có JD</option>`;
-
-      const criteria = candidate.criteria || [];
+      const snapshot = candidate.archivedJobSnapshot || {};
+      const jobTitle = candidate.archivedJobName || displayJobName(currentJob);
+      const jdText = currentJob?.jd || snapshot.jd || "Không còn nội dung JD.";
+      const feedbackText = currentJob?.feedback || snapshot.feedback || "Không có feedback đã lưu.";
+      const criteria = Array.isArray(candidate.criteria) ? candidate.criteria : [];
       const required = criteria.filter(item => item.type === "required");
       const nice = criteria.filter(item => item.type === "nice");
+      const jobOptions = jobs.length ? jobs.map(job => `<option value="${escapeHTML(job.id)}" ${job.id === candidate.jobId ? "selected" : ""}>${escapeHTML(displayJobName(job))}</option>`).join("") : `<option value="">Chưa có JD</option>`;
 
-      panel.innerHTML = `
-        <div class="detail-head">
-          <div>
-            <h2 class="detail-name">${escapeHTML(candidate.name)}</h2>
-            <div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            <div class="candidate-job">JD trước khi lưu trữ: ${escapeHTML(archivedJobTitle)}</div>
-            <div class="archive-date">Đưa vào lưu trữ: ${escapeHTML(archivedDate)}</div>
-          </div>
-          ${candidateLinkedInLinks(candidate)}
-        </div>
-
-        <div class="detail-content">
-          <div class="group-title"><span>JD đã dùng</span></div>
-          <div class="job-info-box">
-            <div class="job-info-title">${escapeHTML(archivedJobTitle)}</div>
-            <div class="job-info-text">${escapeHTML(jdText)}</div>
-            <div class="job-info-section">
-              <div class="job-info-title">Feedback khách hàng</div>
-              <div class="job-info-text">${escapeHTML(feedbackText)}</div>
-            </div>
-          </div>
-
-          <div class="group-title">
-            <span>Tiêu chí trong lần screening</span>
-            <span class="group-label">${criteria.length} tiêu chí</span>
-          </div>
-          ${required.length
-            ? `<div class="group-title"><span>Bắt buộc</span><span class="group-label">${required.length}</span></div>${required.map(criterionMarkup).join("")}`
-            : ""}
-          ${nice.length
-            ? `<div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length}</span></div>${nice.map(criterionMarkup).join("")}`
-            : ""}
-          ${!criteria.length ? `<div class="muted">Không có tiêu chí screening đã lưu.</div>` : ""}
-
-          <details class="raw-profile">
-            <summary>Xem profile gốc đã dán</summary>
-            <pre>${escapeHTML(candidate.raw || "Không có profile gốc.")}</pre>
-          </details>
-
-          <div class="archive-actions">
-            <div class="field">
-              <label for="restoreJobSelect">Chọn JD để đưa ứng viên trở lại pipeline</label>
-              <select id="restoreJobSelect" ${jobs.length ? "" : "disabled"}>
-                ${jobOptions}
-              </select>
-            </div>
-            <div class="archive-buttons">
-              <button class="button restore" id="restoreCandidate" type="button" ${jobs.length ? "" : "disabled"}>Đưa trở lại</button>
-              <button class="button danger" id="deletePermanently" type="button">Xóa vĩnh viễn</button>
-            </div>
-          </div>
-        </div>
-      `;
+      panel.innerHTML = `<div class="detail-head">
+        <div><h2 class="detail-name">${escapeHTML(candidate.name)}</h2><div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div><div class="candidate-job">JD trước khi lưu trữ: ${escapeHTML(jobTitle)}</div><div class="archive-date">Đưa vào lưu trữ: ${escapeHTML(new Date(candidate.archivedAt).toLocaleString())}</div></div>
+        ${candidateLinkedInLinks(candidate)}
+      </div><div class="detail-content">
+        <div class="group-title"><span>JD đã dùng</span></div>
+        <div class="job-info-box"><div class="job-info-title">${escapeHTML(jobTitle)}</div><div class="job-info-text">${escapeHTML(jdText)}</div><div class="job-info-section"><div class="job-info-title">Feedback khách hàng</div><div class="job-info-text">${escapeHTML(feedbackText)}</div></div></div>
+        <div class="group-title"><span>Tiêu chí trong lần screening</span><span class="group-label">${criteria.length} tiêu chí</span></div>
+        ${required.length ? `<div class="group-title"><span>Bắt buộc</span><span class="group-label">${required.length}</span></div>${required.map(criterionMarkup).join("")}` : ""}
+        ${nice.length ? `<div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length}</span></div>${nice.map(criterionMarkup).join("")}` : ""}
+        ${criteria.length ? "" : `<div class="muted">Không có tiêu chí screening đã lưu.</div>`}
+        <details class="raw-profile"><summary>Xem profile gốc đã dán</summary><pre>${escapeHTML(candidate.raw || "Không có profile gốc.")}</pre></details>
+        <div class="archive-actions"><div class="field"><label for="restoreJobSelect">Chọn JD để đưa ứng viên trở lại pipeline</label><select id="restoreJobSelect" ${jobs.length ? "" : "disabled"}>${jobOptions}</select></div><div class="archive-buttons"><button class="button restore" id="restoreCandidate" type="button" ${jobs.length ? "" : "disabled"}>Đưa trở lại</button><button class="button danger" id="deletePermanently" type="button">Xóa vĩnh viễn</button></div></div>
+      </div>`;
 
       document.getElementById("restoreCandidate").addEventListener("click", () => restoreCandidate(candidate.id));
       document.getElementById("deletePermanently").addEventListener("click", () => permanentlyDeleteCandidate(candidate.id));
@@ -1449,43 +887,29 @@
     function restoreCandidate(id) {
       const candidate = candidates.find(item => item.id === id && item.archivedAt);
       if (!candidate) return;
-
-      const targetJobId = document.getElementById("restoreJobSelect").value;
-      const targetJob = jobs.find(job => job.id === targetJobId);
-
-      if (!targetJob) {
-        showToast("Hãy tạo hoặc chọn một JD hợp lệ trước.");
-        return;
-      }
+      const targetJob = jobs.find(job => job.id === document.getElementById("restoreJobSelect").value);
+      if (!targetJob) return showToast("Hãy tạo hoặc chọn một JD hợp lệ trước.");
 
       candidate.jobId = targetJob.id;
-      candidate.criteria = getAllCriteria(targetJob).map(item => ({
-        ...item,
-        evidence: findEvidence(item.text, candidate.raw || "")
-      }));
+      candidate.criteria = getAllCriteria(targetJob).map(item => ({ ...item, evidence: findEvidence(item.text, candidate.raw || "") }));
       candidate.decision = null;
       delete candidate.archivedAt;
       delete candidate.archivedJobName;
       delete candidate.archivedJobSnapshot;
-
       selectedCandidateId = candidate.id;
       selectedArchivedCandidateId = null;
       saveData();
-
       document.getElementById("screenJob").value = targetJob.id;
       updateScreenJobInfo();
       renderCandidateList();
       renderSelectedCandidate();
       renderArchive();
-      showToast(`Đã đưa ${candidate.name} trở lại pipeline: ${displayJobName(targetJob)}.`);
+      showToast("Đã đưa ứng viên trở lại pipeline.");
     }
 
     function permanentlyDeleteCandidate(id) {
       const candidate = candidates.find(item => item.id === id && item.archivedAt);
-      if (!candidate) return;
-
-      if (!confirm(`Xóa vĩnh viễn hồ sơ của ${candidate.name}? Thao tác này không thể hoàn tác.`)) return;
-
+      if (!candidate || !confirm(`Xóa vĩnh viễn hồ sơ của ${candidate.name}? Thao tác này không thể hoàn tác.`)) return;
       candidates = candidates.filter(item => item.id !== id);
       selectedArchivedCandidateId = getArchivedCandidates()[0]?.id || null;
       saveData();
@@ -1493,15 +917,42 @@
       showToast("Đã xóa vĩnh viễn hồ sơ ứng viên.");
     }
 
+    document.getElementById("jobForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const id = document.getElementById("editingJobId").value;
+      const job = {
+        id: id || `job-${Date.now()}`,
+        name: document.getElementById("jobName").value.trim(),
+        company: document.getElementById("jobCompany").value.trim(),
+        jd: document.getElementById("jobText").value.trim(),
+        feedback: document.getElementById("jobFeedback").value.trim(),
+        criteria: criteriaFromEditor()
+      };
+      const index = jobs.findIndex(item => item.id === id);
+      if (index >= 0) jobs[index] = job; else jobs.unshift(job);
+      saveData();
+      renderJobs();
+      resetJobForm();
+      showToast("Đã lưu JD và feedback.");
+    });
+
+    document.getElementById("jobText").addEventListener("input", event => renderCriteriaEditor(parseJD(event.target.value)));
+    document.getElementById("clearJobForm").addEventListener("click", resetJobForm);
+    document.getElementById("cancelEdit").addEventListener("click", resetJobForm);
+    document.getElementById("analyzeButton").addEventListener("click", analyzeProfile);
     document.getElementById("screenJob").addEventListener("change", () => {
       selectedCandidateId = null;
       updateScreenJobInfo();
       renderCandidateList();
       renderSelectedCandidate();
     });
+    document.querySelectorAll(".nav-item").forEach(button => button.addEventListener("click", () => setPage(button.dataset.page)));
 
     renderCriteriaEditor([]);
     renderJobs();
+    renderScreening();
+    setPage("overview");
   </script>
 </body>
 </html>
+```
