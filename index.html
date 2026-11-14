@@ -76,7 +76,6 @@
       background: transparent;
       font-size: 13px;
     }
-    .nav-item:hover { background: #24334d; }
     .nav-item.active { color: white; background: #293752; }
     .nav-icon { width: 18px; text-align: center; }
     .sidebar-note {
@@ -101,9 +100,15 @@
     .breadcrumb { color: var(--muted); font-size: 12px; }
     .breadcrumb strong { color: var(--ink); }
     .user { color: #596579; font-size: 12px; }
-    .content { max-width: 1500px; margin: auto; padding: 27px 28px 40px; }
-    .page-heading { margin-bottom: 18px; }
-    h1 { margin: 0; font-size: 24px; letter-spacing: -.03em; }
+    .content { max-width: 1460px; margin: auto; padding: 27px 28px 40px; }
+    .page-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 5px; font-size: 24px; letter-spacing: -.03em; }
 
     .panel {
       min-width: 0;
@@ -132,14 +137,14 @@
       font-size: 11px;
     }
     .button:hover { filter: brightness(.98); }
-    .button:disabled { cursor: not-allowed; opacity: .55; }
     .button.primary { border-color: var(--blue); color: white; background: var(--blue); }
-    .button.pass, .button.restore { border-color: #b7e5cf; color: var(--green); background: var(--green-soft); }
-    .button.fail, .button.danger { border-color: #efc3c0; color: var(--red); background: #fff8f7; }
+    .button.pass { border-color: #b7e5cf; color: var(--green); background: var(--green-soft); }
+    .button.fail { border-color: #f2c8c5; color: var(--red); background: var(--red-soft); }
+    .button.danger { border-color: #efc3c0; color: var(--red); background: #fff8f7; }
+    .button.restore { border-color: #b7e5cf; color: var(--green); background: var(--green-soft); }
     .button.selected-pass { border-color: var(--green); color: white; background: var(--green); }
     .button.selected-fail { border-color: var(--red); color: white; background: var(--red); }
     .hidden { display: none !important; }
-    .empty { padding: 28px 16px; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.6; }
 
     .overview-grid {
       display: grid;
@@ -280,9 +285,19 @@
       line-height: 1.4;
       overflow-wrap: anywhere;
     }
-    .candidate-job { margin-top: 5px; color: #8993a3; font-size: 9px; line-height: 1.4; }
+    .candidate-job {
+      margin-top: 5px;
+      color: #8993a3;
+      font-size: 9px;
+      line-height: 1.4;
+    }
 
-    .linkedin-links { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .linkedin-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
     .linkedin-link {
       display: inline-flex;
       width: 24px;
@@ -292,7 +307,7 @@
       border: 1px solid currentColor;
       border-radius: 6px;
       text-decoration: none;
-      transition: transform .12s;
+      transition: transform .12s, background .12s, opacity .12s;
     }
     .linkedin-link:hover { transform: translateY(-1px); }
     .linkedin-link svg { width: 14px; height: 14px; fill: currentColor; }
@@ -306,6 +321,7 @@
       opacity: .65;
     }
 
+    .empty { padding: 28px 16px; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.6; }
     .detail-head {
       display: flex;
       justify-content: space-between;
@@ -316,7 +332,7 @@
     .detail-name { margin: 0 0 4px; font-size: 16px; }
     .detail-role { color: var(--muted); font-size: 10px; }
     .decision-area { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
-    .decision-actions { display: flex; gap: 7px; }
+    .decision-actions { display: flex; gap: 7px; align-items: flex-start; }
     .detail-content { padding: 16px 19px 20px; }
     .group-title {
       display: flex;
@@ -343,7 +359,14 @@
     .evidence { color: #667286; font-size: 10px; line-height: 1.5; }
     .evidence.found { color: #376e55; }
     .evidence.missing { color: #818b9b; font-style: italic; }
-    .evidence-status { padding: 5px 7px; border-radius: 5px; color: #677286; background: #f1f3f6; font-size: 9px; white-space: nowrap; }
+    .evidence-status {
+      padding: 5px 7px;
+      border-radius: 5px;
+      color: #677286;
+      background: #f1f3f6;
+      font-size: 9px;
+      white-space: nowrap;
+    }
     .evidence-status.found { color: var(--green); background: var(--green-soft); }
     .raw-profile { margin-top: 17px; }
     .raw-profile summary { color: #657187; cursor: pointer; font-size: 10px; }
@@ -373,66 +396,6 @@
     .archive-buttons { display: flex; gap: 7px; }
     .archive-date { margin-top: 5px; color: #929bab; font-size: 9px; }
 
-    /* Database */
-    .database-import { padding: 16px 17px; margin-bottom: 16px; }
-    .database-import textarea {
-      min-height: 140px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 10px;
-    }
-    .import-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .import-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .duplicate-option { width: auto; min-width: 175px; }
-    .mapping-panel { margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--line); }
-    .mapping-grid { display: grid; grid-template-columns: repeat(4, minmax(130px, 1fr)); gap: 9px; margin: 10px 0 14px; }
-    .mapping-field label { display: block; margin-bottom: 5px; color: #667286; font-size: 10px; font-weight: 650; }
-    .mapping-field select { padding: 7px 8px; font-size: 10px; }
-    .preview-wrap { max-height: 270px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
-    .preview-table, .database-table { width: 100%; border-collapse: collapse; }
-    .preview-table th, .preview-table td, .database-table th, .database-table td {
-      padding: 8px 9px;
-      border-bottom: 1px solid #edf0f4;
-      text-align: left;
-      vertical-align: top;
-      font-size: 10px;
-      line-height: 1.45;
-    }
-    .preview-table th, .database-table th {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      color: #667286;
-      background: #f8f9fc;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .preview-table td { min-width: 110px; max-width: 230px; overflow-wrap: anywhere; }
-    .database-toolbar { padding: 14px 16px; border-bottom: 1px solid var(--line); }
-    .filter-grid { display: grid; grid-template-columns: repeat(3, minmax(140px, 1fr)); gap: 8px; }
-    .filter-grid input { padding: 8px 9px; font-size: 10px; }
-    .database-table-wrap { max-height: 620px; overflow: auto; }
-    .database-table { min-width: 850px; }
-    .database-table td { max-width: 240px; overflow-wrap: anywhere; }
-    .table-link { color: #3260c8; text-decoration: none; }
-    .table-link:hover { text-decoration: underline; }
-    .duplicate-tag {
-      display: inline-block;
-      margin-left: 5px;
-      padding: 3px 6px;
-      border-radius: 5px;
-      color: #8b641b;
-      background: var(--amber-soft);
-      font-size: 9px;
-      white-space: nowrap;
-    }
-    .import-result { margin-top: 9px; color: var(--muted); font-size: 10px; }
-
     .toast {
       position: fixed;
       bottom: 20px;
@@ -450,9 +413,6 @@
     }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-    @media (max-width: 1100px) {
-      .mapping-grid { grid-template-columns: repeat(3, minmax(130px, 1fr)); }
-    }
     @media (max-width: 1000px) {
       .app { grid-template-columns: 68px minmax(0, 1fr); }
       .sidebar { align-items: center; padding: 20px 10px; }
@@ -473,14 +433,13 @@
       .decision-area { align-items: flex-start; }
       .archive-actions { grid-template-columns: 1fr; }
       .archive-buttons { flex-wrap: wrap; }
-      .mapping-grid, .filter-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
-      .import-actions { align-items: flex-start; flex-direction: column; }
     }
     @media (max-width: 500px) {
       .app { grid-template-columns: 1fr; }
       .sidebar { display: none; }
       .topbar { height: 55px; padding: 0 13px; }
       .content { padding: 17px 11px; }
+      .page-heading { flex-direction: column; }
       .job-card { flex-direction: column; }
       .job-actions { align-self: flex-start; }
       .screen-bottom { align-items: flex-start; flex-direction: column; }
@@ -489,7 +448,6 @@
       .candidate-role { font-size: 9px; }
       .linkedin-link { width: 22px; height: 22px; }
       .linkedin-link svg { width: 13px; height: 13px; }
-      .mapping-grid, .filter-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -501,7 +459,6 @@
         <div class="nav-label">WORKSPACE</div>
         <button class="nav-item active" data-page="overview"><span class="nav-icon">▦</span><span class="nav-text">Tổng quan</span></button>
         <button class="nav-item" data-page="screening"><span class="nav-icon">♙</span><span class="nav-text">Screening</span></button>
-        <button class="nav-item" data-page="database"><span class="nav-icon">▤</span><span class="nav-text">Database</span></button>
         <button class="nav-item" data-page="archive"><span class="nav-icon">▣</span><span class="nav-text">Lưu trữ</span></button>
       </div>
       <div class="sidebar-note">Prototype localhost<br>Chưa kết nối AI hoặc backend</div>
@@ -514,7 +471,9 @@
       </header>
 
       <div class="content">
-        <div class="page-heading"><h1 id="pageTitle">Thư viện JD</h1></div>
+        <div class="page-heading">
+          <h1 id="pageTitle">Thư viện JD</h1>
+        </div>
 
         <section id="overviewPage">
           <div class="overview-grid">
@@ -602,61 +561,6 @@
           </div>
         </section>
 
-        <section id="databasePage" class="hidden">
-          <section class="panel database-import">
-            <div class="panel-title">Nhập ứng viên từ bảng tính</div>
-            <div class="muted" style="margin:6px 0 12px">
-              Copy cả hàng tiêu đề và dữ liệu từ Google Sheets rồi dán vào đây. Kiểm tra mapping và bản xem trước trước khi nhập.
-            </div>
-            <textarea id="databasePaste" placeholder="First Name&#9;Last Name&#9;Location&#9;Title&#9;Company&#9;LinkedIn URL&#9;Email"></textarea>
-
-            <div class="import-actions">
-              <div class="import-controls">
-                <button class="button primary" id="prepareImport" type="button">Đọc bảng và xem trước</button>
-                <button class="button" id="clearImport" type="button">Xóa nội dung</button>
-                <label class="muted" for="duplicateMode">Khi gặp hồ sơ trùng:</label>
-                <select id="duplicateMode" class="duplicate-option">
-                  <option value="skip">Bỏ qua hồ sơ trùng</option>
-                  <option value="update">Cập nhật hồ sơ trùng</option>
-                </select>
-              </div>
-              <div class="muted">Dò trùng ưu tiên LinkedIn URL, sau đó Email.</div>
-            </div>
-
-            <div class="mapping-panel hidden" id="mappingPanel">
-              <div class="panel-title">Kiểm tra mapping cột</div>
-              <div class="muted" id="mappingMessage" style="margin-top:5px"></div>
-              <div class="mapping-grid" id="mappingGrid"></div>
-              <div class="preview-wrap" id="previewWrap"></div>
-              <div class="import-actions">
-                <div class="muted" id="previewSummary"></div>
-                <button class="button primary" id="importRows" type="button">Xác nhận nhập</button>
-              </div>
-              <div class="import-result" id="importResult"></div>
-            </div>
-          </section>
-
-          <section class="panel">
-            <div class="panel-head">
-              <div>
-                <div class="panel-title">Database ứng viên</div>
-                <div class="muted" id="databaseCount"></div>
-              </div>
-            </div>
-            <div class="database-toolbar">
-              <div class="filter-grid">
-                <input data-db-filter="fullName" placeholder="Lọc theo Fullname">
-                <input data-db-filter="location" placeholder="Lọc theo Location">
-                <input data-db-filter="title" placeholder="Lọc theo Title">
-                <input data-db-filter="company" placeholder="Lọc theo Company">
-                <input data-db-filter="linkedinUrl" placeholder="Lọc theo LinkedIn URL">
-                <input data-db-filter="email" placeholder="Lọc theo Email">
-              </div>
-            </div>
-            <div class="database-table-wrap" id="databaseTableWrap"></div>
-          </section>
-        </section>
-
         <section id="archivePage" class="hidden">
           <div class="workspace">
             <section class="panel">
@@ -678,11 +582,8 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    "use strict";
-
     const STORAGE_JOBS = "talent-desk-jobs-v2";
     const STORAGE_CANDIDATES = "talent-desk-candidates-v2";
-    const STORAGE_DATABASE = "talent-desk-database-v1";
 
     const sampleJobs = [{
       id: "sample-sales",
@@ -698,32 +599,16 @@
       ]
     }];
 
-    const databaseFields = [
-      { key: "fullName", label: "Fullname" },
-      { key: "firstname", label: "Firstname" },
-      { key: "lastname", label: "Lastname" },
-      { key: "location", label: "Location" },
-      { key: "title", label: "Title" },
-      { key: "company", label: "Company" },
-      { key: "linkedinUrl", label: "LinkedIn URL" },
-      { key: "email", label: "Email" }
-    ];
-
     let jobs = loadData(STORAGE_JOBS, sampleJobs);
     let candidates = loadData(STORAGE_CANDIDATES, []);
-    let databaseCandidates = loadData(STORAGE_DATABASE, []);
     let selectedCandidateId = null;
     let selectedArchivedCandidateId = null;
-    let importTable = null;
-    let importMapping = null;
     let toastTimer;
 
     function loadData(key, fallback) {
       try {
         const value = localStorage.getItem(key);
-        if (!value) return fallback;
-        const parsed = JSON.parse(value);
-        return Array.isArray(parsed) ? parsed : fallback;
+        return value ? JSON.parse(value) : fallback;
       } catch {
         return fallback;
       }
@@ -732,7 +617,6 @@
     function saveData() {
       localStorage.setItem(STORAGE_JOBS, JSON.stringify(jobs));
       localStorage.setItem(STORAGE_CANDIDATES, JSON.stringify(candidates));
-      localStorage.setItem(STORAGE_DATABASE, JSON.stringify(databaseCandidates));
     }
 
     function escapeHTML(value) {
@@ -745,27 +629,10 @@
       }[char]));
     }
 
-    function normalize(text) {
-      return String(text || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d")
-        .replace(/Đ/g, "D")
-        .toLowerCase();
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById("toast");
-      toast.textContent = message;
-      toast.classList.add("show");
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
-    }
-
     function displayJobName(job) {
       if (!job) return "JD đã bị xóa";
-      const company = String(job.company || "").trim();
-      const position = String(job.name || "").trim();
+      const company = (job.company || "").trim();
+      const position = (job.name || "").trim();
       if (company && position) return `${company} - ${position}`;
       return company || position || "JD chưa đặt tên";
     }
@@ -775,19 +642,24 @@
       return candidate.archivedJobName || displayJobName(job);
     }
 
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2300);
+    }
+
     function setPage(page) {
-      const pages = ["overview", "screening", "database", "archive"];
-      pages.forEach(name => {
-        document.getElementById(`${name}Page`).classList.toggle("hidden", name !== page);
-      });
+      document.getElementById("overviewPage").classList.toggle("hidden", page !== "overview");
+      document.getElementById("screeningPage").classList.toggle("hidden", page !== "screening");
+      document.getElementById("archivePage").classList.toggle("hidden", page !== "archive");
 
       const labels = {
         overview: ["Tổng quan", "Thư viện JD"],
         screening: ["Screening", "Screening ứng viên"],
-        database: ["Database", "Database ứng viên"],
         archive: ["Lưu trữ", "Ứng viên lưu trữ"]
       };
-
       document.getElementById("breadcrumb").textContent = labels[page][0];
       document.getElementById("pageTitle").textContent = labels[page][1];
 
@@ -796,7 +668,6 @@
       });
 
       if (page === "screening") renderScreening();
-      if (page === "database") renderDatabase();
       if (page === "archive") renderArchive();
     }
 
@@ -811,13 +682,13 @@
     }
 
     function cleanCriterion(text) {
-      return String(text || "")
+      return text
         .replace(/^\s*(bắt buộc|ưu tiên|nice.to.have|must.have|required|mandatory)\s*[:\-–]?\s*/i, "")
         .trim();
     }
 
     function parseJD(text) {
-      return String(text || "")
+      return text
         .split(/\n|[;•]+/)
         .map(line => line.replace(/^\s*[-*]\s*/, "").trim())
         .filter(Boolean)
@@ -849,13 +720,11 @@
     });
 
     function criteriaFromEditor() {
-      return Array.from(document.querySelectorAll("[data-criterion-text]"))
-        .map(input => {
-          const index = input.dataset.criterionText;
-          const typeSelect = document.querySelector(`[data-criterion-type="${index}"]`);
-          return { text: input.value.trim(), type: typeSelect ? typeSelect.value : "required" };
-        })
-        .filter(item => item.text);
+      return [...document.querySelectorAll("[data-criterion-text]")].map(input => {
+        const index = input.dataset.criterionText;
+        const type = document.querySelector(`[data-criterion-type="${index}"]`)?.value || "required";
+        return { text: input.value.trim(), type };
+      }).filter(item => item.text);
     }
 
     function resetJobForm() {
@@ -898,9 +767,9 @@
       if (!job) return;
 
       document.getElementById("editingJobId").value = job.id;
-      document.getElementById("jobName").value = job.name || "";
+      document.getElementById("jobName").value = job.name;
       document.getElementById("jobCompany").value = job.company || "";
-      document.getElementById("jobText").value = job.jd || "";
+      document.getElementById("jobText").value = job.jd;
       document.getElementById("jobFeedback").value = job.feedback || "";
       document.getElementById("jobFormTitle").textContent = "Chỉnh sửa JD và feedback";
       document.getElementById("saveJobButton").textContent = "Lưu thay đổi";
@@ -912,6 +781,7 @@
     function deleteJob(id) {
       const job = jobs.find(item => item.id === id);
       if (!job) return;
+
       if (!confirm(`Xóa JD "${displayJobName(job)}" và các hồ sơ liên quan?`)) return;
 
       jobs = jobs.filter(item => item.id !== id);
@@ -924,14 +794,14 @@
     }
 
     function renderJobs() {
-      const list = document.getElementById("jobList");
       document.getElementById("jobCount").textContent = `${jobs.length} JD`;
+      const list = document.getElementById("jobList");
 
       if (!jobs.length) {
         list.innerHTML = `<div class="empty">Chưa có JD. Thêm JD mới bằng form bên cạnh.</div>`;
       } else {
         list.innerHTML = jobs.map(job => {
-          const criteria = Array.isArray(job.criteria) ? job.criteria : [];
+          const criteria = job.criteria || [];
           const requiredCount = criteria.filter(item => item.type === "required").length;
           const niceCount = criteria.filter(item => item.type === "nice").length;
 
@@ -960,6 +830,7 @@
 
       const select = document.getElementById("screenJob");
       const previous = select.value;
+
       select.innerHTML = jobs.map(job =>
         `<option value="${escapeHTML(job.id)}">${escapeHTML(displayJobName(job))}</option>`
       ).join("");
@@ -989,81 +860,113 @@
       `;
     }
 
-    function tokenize(text) {
-      const stopWords = new Set([
-        "kinh", "nghiem", "lam", "viec", "voi", "cho", "cac", "mot", "trong",
-        "cua", "va", "hoac", "tu", "den", "co", "the", "duoc", "biet", "su",
-        "dung", "thuc", "hien", "trach", "nhiem", "vi", "tri", "yeu", "cau",
-        "ung", "vien", "experience", "with", "and", "the", "for", "from",
-        "have", "has", "this", "that", "into", "your"
-      ]);
+    document.getElementById("screenJob").addEventListener("change", () => {
+      selectedCandidateId = null;
+      updateScreenJobInfo();
+      renderCandidateList();
+      renderSelectedCandidate();
+    });
 
+    function normalize(text) {
+      return String(text || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D")
+        .toLowerCase();
+    }
+
+    const stopWords = new Set([
+      "kinh", "nghiem", "lam", "viec", "voi", "cho", "cac", "mot", "trong",
+      "cua", "va", "hoac", "tu", "den", "co", "the", "duoc", "biet", "su",
+      "dung", "thuc", "hien", "trach", "nhiem", "vi", "tri", "yeu", "cau",
+      "ung", "vien", "experience", "with", "and", "the", "for", "from",
+      "have", "has", "this", "that", "into", "your"
+    ]);
+
+    function tokens(text) {
       return normalize(text).match(/[a-z0-9+#.]+/g)?.filter(token =>
         token.length > 2 && !stopWords.has(token)
       ) || [];
     }
 
     function findEvidence(criterion, profile) {
-      const lines = String(profile || "").split(/\n/).map(line => line.trim()).filter(Boolean);
-      const keywords = [...new Set(tokenize(criterion))];
+      const lines = profile.split(/\n/).map(line => line.trim()).filter(Boolean);
+      const keywords = [...new Set(tokens(criterion))];
       if (!keywords.length) return null;
 
-      let bestLine = null;
+      let best = null;
       let bestScore = 0;
 
       for (const line of lines) {
         const normalizedLine = normalize(line);
         const score = keywords.filter(word => normalizedLine.includes(word)).length;
+
         if (score > bestScore) {
-          bestLine = line;
+          best = line;
           bestScore = score;
         }
       }
 
       const threshold = keywords.length >= 3 ? 2 : 1;
-      return bestScore >= threshold ? bestLine : null;
+      return bestScore >= threshold ? best : null;
     }
 
     function extractLinkedInUrl(text) {
-      const match = String(text || "").match(/(?:https?:\/\/)?(?:www\.)?linkedin\.com\/[^\s<>"']+/i);
-      if (!match) return "";
+      const pattern = /(?:https?:\/\/)?(?:www\.)?linkedin\.com\/[^\s<>"']+/ig;
+      const match = pattern.exec(text);
+      if (!match) return null;
 
       let url = match[0].replace(/[.,;:!?)}\]]+$/, "");
       if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
       return url;
     }
 
-    function deriveLinkedInUrl(originalUrl) {
-      if (!originalUrl) return "";
-
+    function getLinkedInPath(url) {
       try {
-        const parsed = new URL(originalUrl);
-        if (!/(^|\.)linkedin\.com$/i.test(parsed.hostname)) return "";
+        const parsed = new URL(url);
+        if (!/(^|\.)linkedin\.com$/i.test(parsed.hostname)) return null;
+        return { parsed, path: parsed.pathname };
+      } catch {
+        return null;
+      }
+    }
 
-        let path = parsed.pathname;
-        if (/^\/in\/[^/]+\/?/i.test(path)) return parsed.href;
+    function deriveLinkedInUrl(originalUrl) {
+      if (!originalUrl) return null;
 
-        if (/^\/sales\/lead\//i.test(path)) {
-          path = path.replace(/,NAME_SEARCH.*$/i, "");
-          path = path.replace(/^\/sales\/lead\//i, "/in/");
-        } else if (/^\/talent\/profile\//i.test(path)) {
-          path = path.replace(/^\/talent\/profile\//i, "/in/");
-        } else {
-          return "";
-        }
+      const result = getLinkedInPath(originalUrl);
+      if (!result) return null;
 
-        if (!/^\/in\/[^/]+/i.test(path)) return "";
+      const { parsed } = result;
+      let path = result.path;
+
+      if (/^\/in\/[^/]+\/?/i.test(path)) return parsed.href;
+
+      if (/^\/sales\/lead\//i.test(path)) {
+        path = path.replace(/,NAME_SEARCH.*$/i, "");
+        path = path.replace(/^\/sales\/lead\//i, "/in/");
+        if (!/^\/in\/[^/]+/i.test(path)) return null;
         parsed.pathname = path;
         parsed.search = "";
         parsed.hash = "";
         return parsed.href;
-      } catch {
-        return "";
       }
+
+      if (/^\/talent\/profile\//i.test(path)) {
+        path = path.replace(/^\/talent\/profile\//i, "/in/");
+        if (!/^\/in\/[^/]+/i.test(path)) return null;
+        parsed.pathname = path;
+        parsed.search = "";
+        parsed.hash = "";
+        return parsed.href;
+      }
+
+      return null;
     }
 
     function parseProfile(profile) {
-      const lines = String(profile || "").split(/\n/).map(line => line.trim()).filter(Boolean);
+      const lines = profile.split(/\n/).map(line => line.trim()).filter(Boolean);
       let name = lines[0] || "Ứng viên chưa rõ tên";
       name = name.replace(/\s*[|·]\s*(1st|2nd|3rd|\d+(st|nd|rd)).*$/i, "").trim();
 
@@ -1080,8 +983,8 @@
       }
 
       if (!role) {
-        const separated = lines.find(line => (line.includes("·") || line.includes("|")) && !line.includes("@"));
-        if (separated) {
+        const separated = lines.find(line => line.includes("·") || line.includes("|"));
+        if (separated && !separated.includes("@")) {
           const parts = separated.split(/[·|]/).map(part => part.trim()).filter(Boolean);
           if (parts.length >= 2) {
             role = parts[0];
@@ -1099,8 +1002,9 @@
 
     function feedbackCriteria(feedback) {
       if (!feedback || !feedback.trim()) return [];
+
       return feedback
-        .split(/\n|[;•]+|[.!?]\s+/)
+        .split(/\n|[;•]+|(?<=[.!?])\s+/)
         .map(text => text.trim())
         .filter(text => text.length > 3)
         .map(text => ({
@@ -1111,14 +1015,10 @@
     }
 
     function getAllCriteria(job) {
-      const jobCriteria = Array.isArray(job.criteria) && job.criteria.length
-        ? job.criteria
-        : parseJD(job.jd);
+      const jdCriteria = (job.criteria?.length ? job.criteria : parseJD(job.jd))
+        .map(item => ({ ...item, origin: "JD" }));
 
-      return [
-        ...jobCriteria.map(item => ({ ...item, origin: "JD" })),
-        ...feedbackCriteria(job.feedback)
-      ];
+      return [...jdCriteria, ...feedbackCriteria(job.feedback)];
     }
 
     function analyzeProfile() {
@@ -1138,19 +1038,26 @@
 
       const parsed = parseProfile(raw);
       const originalLinkedInUrl = extractLinkedInUrl(raw);
+      const derivedLinkedInUrl = deriveLinkedInUrl(originalLinkedInUrl);
+
+      const name = document.getElementById("candidateName").value.trim() || parsed.name;
+      const role = document.getElementById("candidateRole").value.trim() || parsed.role;
+      const company = document.getElementById("candidateCompany").value.trim() || parsed.company;
+      const criteria = getAllCriteria(job).map(item => ({
+        ...item,
+        evidence: findEvidence(item.text, raw)
+      }));
+
       const candidate = {
         id: `candidate-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
         jobId,
-        name: document.getElementById("candidateName").value.trim() || parsed.name,
-        role: document.getElementById("candidateRole").value.trim() || parsed.role,
-        company: document.getElementById("candidateCompany").value.trim() || parsed.company,
+        name,
+        role,
+        company,
         raw,
         originalLinkedInUrl,
-        derivedLinkedInUrl: deriveLinkedInUrl(originalLinkedInUrl),
-        criteria: getAllCriteria(job).map(item => ({
-          ...item,
-          evidence: findEvidence(item.text, raw)
-        })),
+        derivedLinkedInUrl,
+        criteria,
         decision: null,
         createdAt: new Date().toISOString()
       };
@@ -1166,23 +1073,27 @@
 
       renderScreening();
 
-      if (!originalLinkedInUrl) showToast("Đã screening. Không tìm thấy LinkedIn URL trong profile.");
-      else if (!candidate.derivedLinkedInUrl) showToast("Đã lưu URL gốc; không nhận diện được mẫu URL để suy ra.");
-      else showToast("Đã lưu profile và hai LinkedIn URL.");
+      if (!originalLinkedInUrl) {
+        showToast("Đã tạo kết quả đối chiếu. Không tìm thấy LinkedIn URL trong profile.");
+      } else if (!derivedLinkedInUrl) {
+        showToast("Đã lưu URL gốc. URL này không thuộc mẫu có thể suy ra.");
+      } else {
+        showToast("Đã tạo kết quả đối chiếu và lưu cả hai LinkedIn URL.");
+      }
     }
 
     document.getElementById("analyzeButton").addEventListener("click", analyzeProfile);
-    document.getElementById("screenJob").addEventListener("change", () => {
-      selectedCandidateId = null;
-      updateScreenJobInfo();
-      renderCandidateList();
-      renderSelectedCandidate();
-    });
+
+    function getVisibleCandidates() {
+      const jobId = document.getElementById("screenJob").value;
+      return candidates.filter(candidate => candidate.jobId === jobId && !candidate.archivedAt);
+    }
 
     const linkedInIcon = `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.85 0 1.55-.68 1.55-1.52V3.52c0-.84-.7-1.52-1.55-1.52zM7.08 18.9H4.12V9.37h2.96v9.53zM5.6 8.07a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42zm13.3 10.83h-2.95v-4.64c0-1.1-.02-2.5-1.53-2.5-1.53 0-1.76 1.2-1.76 2.42v4.72H9.7V9.37h2.84v1.3h.04c.4-.75 1.36-1.53 2.8-1.53 3 0 3.56 1.98 3.56 4.55v5.21z"/>
-      </svg>`;
+      </svg>
+    `;
 
     function linkedInLink(url, kind, label) {
       const className = url ? `linkedin-link ${kind}` : `linkedin-link ${kind} disabled`;
@@ -1192,8 +1103,17 @@
         return `<span class="${className}" title="${escapeHTML(title)}" aria-label="${escapeHTML(title)}">${linkedInIcon}</span>`;
       }
 
-      return `<a class="${className}" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer"
-        title="${escapeHTML(label)}" aria-label="${escapeHTML(label)}" data-candidate-link>${linkedInIcon}</a>`;
+      return `
+        <a
+          class="${className}"
+          href="${escapeHTML(url)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="${escapeHTML(label)}"
+          aria-label="${escapeHTML(label)}"
+          data-candidate-link
+        >${linkedInIcon}</a>
+      `;
     }
 
     function candidateLinkedInLinks(candidate) {
@@ -1201,18 +1121,18 @@
         <div class="linkedin-links" aria-label="LinkedIn links">
           ${linkedInLink(candidate.originalLinkedInUrl, "original", "Mở LinkedIn URL gốc")}
           ${linkedInLink(candidate.derivedLinkedInUrl, "derived", "Mở LinkedIn URL suy ra")}
-        </div>`;
-    }
-
-    function getVisibleCandidates() {
-      const jobId = document.getElementById("screenJob").value;
-      return candidates.filter(candidate => candidate.jobId === jobId && !candidate.archivedAt);
+        </div>
+      `;
     }
 
     function decisionDisplay(candidate) {
-      if (candidate.decision === "pass") return { badge: "pass", label: "Đạt", name: "pass-text" };
-      if (candidate.decision === "fail") return { badge: "fail", label: "Không đạt", name: "fail-text" };
-      return { badge: "pending", label: "Chưa đánh giá", name: "" };
+      if (candidate.decision === "pass") {
+        return { className: "pass", text: "Đạt", nameClass: "pass-text" };
+      }
+      if (candidate.decision === "fail") {
+        return { className: "fail", text: "Không đạt", nameClass: "fail-text" };
+      }
+      return { className: "pending", text: "Chưa đánh giá", nameClass: "" };
     }
 
     function renderCandidateList() {
@@ -1226,18 +1146,19 @@
       }
 
       list.innerHTML = visible.map(candidate => {
-        const state = decisionDisplay(candidate);
+        const decision = decisionDisplay(candidate);
         return `
           <article class="candidate ${candidate.id === selectedCandidateId ? "selected" : ""}" data-candidate-id="${escapeHTML(candidate.id)}">
             <div class="candidate-top">
-              <div class="candidate-name ${state.name}">${escapeHTML(candidate.name)}</div>
-              <span class="decision-badge ${state.badge}">${state.label}</span>
+              <div class="candidate-name ${decision.nameClass}">${escapeHTML(candidate.name)}</div>
+              <span class="decision-badge ${decision.className}">${decision.text}</span>
             </div>
             <div class="candidate-meta-row">
               <div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
               ${candidateLinkedInLinks(candidate)}
             </div>
-          </article>`;
+          </article>
+        `;
       }).join("");
 
       list.querySelectorAll("[data-candidate-id]").forEach(element => {
@@ -1252,6 +1173,7 @@
 
     function criterionMarkup(item) {
       const evidence = item.evidence;
+
       return `
         <div class="criteria-item">
           <div class="criteria-name">
@@ -1263,8 +1185,11 @@
               ? `Bằng chứng trong profile: “${escapeHTML(evidence)}”`
               : "Chưa tìm thấy bằng chứng rõ ràng trong phần profile đã dán."}
           </div>
-          <span class="evidence-status ${evidence ? "found" : ""}">${evidence ? "Có dấu hiệu" : "Chưa thấy"}</span>
-        </div>`;
+          <span class="evidence-status ${evidence ? "found" : ""}">
+            ${evidence ? "Có dấu hiệu" : "Chưa thấy"}
+          </span>
+        </div>
+      `;
     }
 
     function setDecision(id, decision) {
@@ -1281,9 +1206,11 @@
     function archiveCandidate(id) {
       const candidate = candidates.find(item => item.id === id && !item.archivedAt);
       if (!candidate) return;
-      if (!confirm(`Bạn có chắc muốn chuyển ${candidate.name} vào lưu trữ tạm thời?`)) return;
 
       const job = jobs.find(item => item.id === candidate.jobId);
+      const confirmed = confirm(`Bạn có chắc muốn chuyển ${candidate.name} vào lưu trữ tạm thời?`);
+      if (!confirmed) return;
+
       candidate.archivedAt = new Date().toISOString();
       candidate.archivedJobName = displayJobName(job);
       candidate.archivedJobSnapshot = job ? {
@@ -1294,19 +1221,23 @@
         criteria: job.criteria
       } : null;
 
-      selectedCandidateId = null;
+      const nextCandidate = getVisibleCandidates().find(item => item.id !== candidate.id);
+      selectedCandidateId = nextCandidate?.id || null;
       selectedArchivedCandidateId = candidate.id;
+
       saveData();
       renderScreening();
       renderArchive();
-      showToast("Đã chuyển ứng viên vào lưu trữ.");
+      showToast("Đã chuyển ứng viên vào lưu trữ tạm thời.");
     }
 
     function renderSelectedCandidate() {
       const panel = document.getElementById("detailPanel");
       const jobId = document.getElementById("screenJob").value;
       const candidate = candidates.find(item =>
-        item.id === selectedCandidateId && item.jobId === jobId && !item.archivedAt
+        item.id === selectedCandidateId &&
+        item.jobId === jobId &&
+        !item.archivedAt
       );
 
       if (!candidate) {
@@ -1314,9 +1245,11 @@
         return;
       }
 
-      const criteria = Array.isArray(candidate.criteria) ? candidate.criteria : [];
+      const criteria = candidate.criteria || [];
       const required = criteria.filter(item => item.type === "required");
       const nice = criteria.filter(item => item.type === "nice");
+      const passClass = candidate.decision === "pass" ? "selected-pass" : "";
+      const failClass = candidate.decision === "fail" ? "selected-fail" : "";
 
       panel.innerHTML = `
         <div class="detail-head">
@@ -1326,23 +1259,36 @@
           </div>
           <div class="decision-area">
             <div class="decision-actions">
-              <button class="button pass ${candidate.decision === "pass" ? "selected-pass" : ""}" id="markPass" type="button">Đạt</button>
-              <button class="button fail ${candidate.decision === "fail" ? "selected-fail" : ""}" id="markFail" type="button">Không đạt</button>
+              <button class="button pass ${passClass}" id="markPass" type="button">Đạt</button>
+              <button class="button fail ${failClass}" id="markFail" type="button">Không đạt</button>
             </div>
             <button class="button danger" id="archiveCandidate" type="button">Xóa ứng viên</button>
             ${candidateLinkedInLinks(candidate)}
           </div>
         </div>
         <div class="detail-content">
-          <div class="group-title"><span>Tiêu chí bắt buộc</span><span class="group-label">${required.length} tiêu chí</span></div>
-          ${required.length ? required.map(criterionMarkup).join("") : `<div class="muted">JD chưa có tiêu chí bắt buộc.</div>`}
-          <div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length} tiêu chí</span></div>
-          ${nice.length ? nice.map(criterionMarkup).join("") : `<div class="muted">JD hoặc feedback chưa có tiêu chí ưu tiên.</div>`}
+          <div class="group-title">
+            <span>Tiêu chí bắt buộc</span>
+            <span class="group-label">${required.length} tiêu chí</span>
+          </div>
+          ${required.length
+            ? required.map(criterionMarkup).join("")
+            : `<div class="muted">JD chưa có tiêu chí bắt buộc.</div>`}
+
+          <div class="group-title">
+            <span>Nice to have</span>
+            <span class="group-label nice">${nice.length} tiêu chí</span>
+          </div>
+          ${nice.length
+            ? nice.map(criterionMarkup).join("")
+            : `<div class="muted">JD hoặc feedback chưa có tiêu chí ưu tiên.</div>`}
+
           <details class="raw-profile">
             <summary>Xem profile gốc đã dán</summary>
-            <pre>${escapeHTML(candidate.raw || "")}</pre>
+            <pre>${escapeHTML(candidate.raw)}</pre>
           </details>
-        </div>`;
+        </div>
+      `;
 
       document.getElementById("markPass").addEventListener("click", () => setDecision(candidate.id, "pass"));
       document.getElementById("markFail").addEventListener("click", () => setDecision(candidate.id, "fail"));
@@ -1361,6 +1307,7 @@
       if (!visible.some(candidate => candidate.id === selectedCandidateId)) {
         selectedCandidateId = visible[0]?.id || null;
       }
+
       renderCandidateList();
       renderSelectedCandidate();
     }
@@ -1378,509 +1325,7 @@
         list.innerHTML = `<div class="empty">Chưa có ứng viên trong lưu trữ.</div>`;
         selectedArchivedCandidateId = null;
         document.getElementById("archiveDetailPanel").innerHTML =
-          `<div class="empty">Ứng viên được lưu trữ sẽ xuất hiện ở đây.</div>`;
-        return;
-      }
-
-      if (!archived.some(candidate => candidate.id === selectedArchivedCandidateId)) {
-        selectedArchivedCandidateId = archived[0].id;
-      }
-
-      list.innerHTML = archived.map(candidate => `
-        <article class="candidate ${candidate.id === selectedArchivedCandidateId ? "selected" : ""}" data-archived-id="${escapeHTML(candidate.id)}">
-          <div class="candidate-top">
-            <div class="candidate-name">${escapeHTML(candidate.name)}</div>
-            <span class="decision-badge pending">Lưu trữ</span>
-          </div>
-          <div class="candidate-meta-row">
-            <div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            ${candidateLinkedInLinks(candidate)}
-          </div>
-          <div class="candidate-job">${escapeHTML(candidateJobName(candidate))}</div>
-        </article>`).join("");
-
-      list.querySelectorAll("[data-archived-id]").forEach(element => {
-        element.addEventListener("click", event => {
-          if (event.target.closest("[data-candidate-link]")) return;
-          selectedArchivedCandidateId = element.dataset.archivedId;
-          renderArchive();
-        });
-      });
-
-      renderArchivedDetails();
-    }
-
-    function renderArchivedDetails() {
-      const panel = document.getElementById("archiveDetailPanel");
-      const candidate = candidates.find(item => item.id === selectedArchivedCandidateId && item.archivedAt);
-
-      if (!candidate) {
-        panel.innerHTML = `<div class="empty">Chọn ứng viên đã lưu trữ để xem thông tin.</div>`;
-        return;
-      }
-
-      const currentJob = jobs.find(item => item.id === candidate.jobId);
-      const snapshot = candidate.archivedJobSnapshot || {};
-      const jobTitle = candidate.archivedJobName || displayJobName(currentJob);
-      const jdText = currentJob?.jd || snapshot.jd || "Không còn nội dung JD.";
-      const feedbackText = currentJob?.feedback || snapshot.feedback || "Không có feedback đã lưu.";
-      const criteria = Array.isArray(candidate.criteria) ? candidate.criteria : [];
-      const required = criteria.filter(item => item.type === "required");
-      const nice = criteria.filter(item => item.type === "nice");
-      const jobOptions = jobs.length
-        ? jobs.map(job => `<option value="${escapeHTML(job.id)}" ${job.id === candidate.jobId ? "selected" : ""}>${escapeHTML(displayJobName(job))}</option>`).join("")
-        : `<option value="">Chưa có JD</option>`;
-
-      panel.innerHTML = `
-        <div class="detail-head">
-          <div>
-            <h2 class="detail-name">${escapeHTML(candidate.name)}</h2>
-            <div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            <div class="candidate-job">JD trước khi lưu trữ: ${escapeHTML(jobTitle)}</div>
-            <div class="archive-date">Đưa vào lưu trữ: ${escapeHTML(new Date(candidate.archivedAt).toLocaleString())}</div>
-          </div>
-          ${candidateLinkedInLinks(candidate)}
-        </div>
-        <div class="detail-content">
-          <div class="group-title"><span>JD đã dùng</span></div>
-          <div class="job-info-box">
-            <div class="job-info-title">${escapeHTML(jobTitle)}</div>
-            <div class="job-info-text">${escapeHTML(jdText)}</div>
-            <div class="job-info-section">
-              <div class="job-info-title">Feedback khách hàng</div>
-              <div class="job-info-text">${escapeHTML(feedbackText)}</div>
-            </div>
-          </div>
-          <div class="group-title"><span>Tiêu chí trong lần screening</span><span class="group-label">${criteria.length} tiêu chí</span></div>
-          ${required.length ? `<div class="group-title"><span>Bắt buộc</span><span class="group-label">${required.length}</span></div>${required.map(criterionMarkup).join("")}` : ""}
-          ${nice.length ? `<div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length}</span></div>${nice.map(criterionMarkup).join("")}` : ""}
-          ${criteria.length ? "" : `<div class="muted">Không có tiêu chí screening đã lưu.</div>`}
-          <details class="raw-profile">
-            <summary>Xem profile gốc đã dán</summary>
-            <pre>${escapeHTML(candidate.raw || "Không có profile gốc.")}</pre>
-          </details>
-          <div class="archive-actions">
-            <div class="field">
-              <label for="restoreJobSelect">Chọn JD để đưa ứng viên trở lại pipeline</label>
-              <select id="restoreJobSelect" ${jobs.length ? "" : "disabled"}>${jobOptions}</select>
-            </div>
-            <div class="archive-buttons">
-              <button class="button restore" id="restoreCandidate" type="button" ${jobs.length ? "" : "disabled"}>Đưa trở lại</button>
-              <button class="button danger" id="deletePermanently" type="button">Xóa vĩnh viễn</button>
-            </div>
-          </div>
-        </div>`;
-
-      document.getElementById("restoreCandidate").addEventListener("click", () => restoreCandidate(candidate.id));
-      document.getElementById("deletePermanently").addEventListener("click", () => permanentlyDeleteCandidate(candidate.id));
-    }
-
-    function restoreCandidate(id) {
-      const candidate = candidates.find(item => item.id === id && item.archivedAt);
-      if (!candidate) return;
-
-      const targetJob = jobs.find(job => job.id === document.getElementById("restoreJobSelect").value);
-      if (!targetJob) {
-        showToast("Hãy tạo hoặc chọn một JD hợp lệ trước.");
-        return;
-      }
-
-      candidate.jobId = targetJob.id;
-      candidate.criteria = getAllCriteria(targetJob).map(item => ({
-        ...item,
-        evidence: findEvidence(item.text, candidate.raw || "")
-      }));
-      candidate.decision = null;
-      delete candidate.archivedAt;
-      delete candidate.archivedJobName;
-      delete candidate.archivedJobSnapshot;
-
-      selectedCandidateId = candidate.id;
-      selectedArchivedCandidateId = null;
-      saveData();
-
-      document.getElementById("screenJob").value = targetJob.id;
-      updateScreenJobInfo();
-      renderCandidateList();
-      renderSelectedCandidate();
-      renderArchive();
-      showToast("Đã đưa ứng viên trở lại pipeline.");
-    }
-
-    function permanentlyDeleteCandidate(id) {
-      const candidate = candidates.find(item => item.id === id && item.archivedAt);
-      if (!candidate) return;
-      if (!confirm(`Xóa vĩnh viễn hồ sơ của ${candidate.name}? Thao tác này không thể hoàn tác.`)) return;
-
-      candidates = candidates.filter(item => item.id !== id);
-      selectedArchivedCandidateId = getArchivedCandidates()[0]?.id || null;
-      saveData();
-      renderArchive();
-      showToast("Đã xóa vĩnh viễn hồ sơ ứng viên.");
-    }
-
-    /* Database import helpers */
-    function normalizeHeader(value) {
-      return normalize(value).replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+/g, " ");
-    }
-
-    const headerAliases = {
-      fullName: ["fullname", "full name", "name", "candidate name", "applicant name"],
-      firstname: ["firstname", "first name", "given name", "forename"],
-      lastname: ["lastname", "last name", "surname", "family name"],
-      location: ["location", "city", "current location", "region", "address", "based in"],
-      title: ["title", "job title", "current title", "position", "current position", "role"],
-      company: ["company", "current company", "employer", "organization", "organisation"],
-      linkedinUrl: ["linkedin", "linkedin url", "linkedin profile", "linkedin profile url", "profile url", "linkedin link"],
-      email: ["email", "e mail", "email address", "e mail address"]
-    };
-
-    function guessField(header) {
-      const normalized = normalizeHeader(header);
-      for (const [field, aliases] of Object.entries(headerAliases)) {
-        if (aliases.includes(normalized)) return field;
-      }
-      return "";
-    }
-
-    function parseTSV(text) {
-      const cleanText = String(text || "").replace(/^\uFEFF/, "").trim();
-      if (!cleanText) return null;
-
-      const lines = cleanText.split(/\r?\n/);
-      if (lines.length < 2) return null;
-
-      const rows = lines.map(line => line.split("\t"));
-      const headers = rows[0].map((value, index) => value.trim() || `Cột ${index + 1}`);
-      const data = rows.slice(1)
-        .filter(row => row.some(cell => String(cell || "").trim()))
-        .map(row => headers.map((_, index) => String(row[index] || "").trim()));
-
-      return data.length ? { headers, rows: data } : null;
-    }
-
-    function buildMapping(headers) {
-      const mapping = {};
-      databaseFields.forEach(field => {
-        mapping[field.key] = headers.findIndex(header => guessField(header) === field.key);
-      });
-      return mapping;
-    }
-
-    function getMappedValue(row, field) {
-      const index = Number(importMapping?.[field] ?? -1);
-      return index >= 0 ? String(row[index] || "").trim() : "";
-    }
-
-    function normalizeLinkedInInput(value) {
-      const input = String(value || "").trim();
-      if (!input) return "";
-
-      const url = /^https?:\/\//i.test(input) ? input : `https://${input}`;
-      try {
-        const parsed = new URL(url);
-        if (!/(^|\.)linkedin\.com$/i.test(parsed.hostname)) return input;
-        parsed.hash = "";
-        return parsed.href.replace(/\/$/, "");
-      } catch {
-        return input;
-      }
-    }
-
-    function makeImportedRecord(row, rowIndex) {
-      const firstname = getMappedValue(row, "firstname");
-      const lastname = getMappedValue(row, "lastname");
-      const providedFullName = getMappedValue(row, "fullName");
-
-      return {
-        id: `db-${Date.now()}-${rowIndex}-${Math.random().toString(36).slice(2, 7)}`,
-        fullName: providedFullName || [firstname, lastname].filter(Boolean).join(" ").trim(),
-        firstname,
-        lastname,
-        location: getMappedValue(row, "location"),
-        title: getMappedValue(row, "title"),
-        company: getMappedValue(row, "company"),
-        linkedinUrl: normalizeLinkedInInput(getMappedValue(row, "linkedinUrl")),
-        email: getMappedValue(row, "email"),
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
-    }
-
-    function normalizeMatch(value) {
-      return normalizeLinkedInInput(value)
-        .replace(/^https?:\/\//i, "")
-        .replace(/^www\./i, "")
-        .replace(/\/+$/, "")
-        .toLowerCase();
-    }
-
-    function findDatabaseDuplicate(record) {
-      const url = normalizeMatch(record.linkedinUrl);
-      const email = normalizeMatch(record.email);
-
-      if (url) {
-        const sameUrl = databaseCandidates.find(item => normalizeMatch(item.linkedinUrl) === url);
-        if (sameUrl) return sameUrl;
-      }
-
-      if (email) {
-        const sameEmail = databaseCandidates.find(item => normalizeMatch(item.email) === email);
-        if (sameEmail) return sameEmail;
-      }
-
-      return null;
-    }
-
-    function getPreparedImportRows() {
-      if (!importTable || !importMapping) return [];
-
-      return importTable.rows
-        .map((row, index) => makeImportedRecord(row, index))
-        .filter(record => Boolean(
-          record.fullName || record.location || record.title ||
-          record.company || record.linkedinUrl || record.email
-        ));
-    }
-
-    function renderMappingUI() {
-      const panel = document.getElementById("mappingPanel");
-      const grid = document.getElementById("mappingGrid");
-
-      if (!importTable || !importMapping) {
-        panel.classList.add("hidden");
-        return;
-      }
-
-      panel.classList.remove("hidden");
-      document.getElementById("mappingMessage").textContent =
-        `Đã nhận diện ${importTable.headers.length} cột và ${importTable.rows.length} dòng dữ liệu. Kiểm tra mapping trước khi nhập.`;
-
-      grid.innerHTML = databaseFields.map(field => {
-        const options = [
-          `<option value="-1">Không nhập</option>`,
-          ...importTable.headers.map((header, index) =>
-            `<option value="${index}" ${Number(importMapping[field.key]) === index ? "selected" : ""}>${escapeHTML(header)}</option>`
-          )
-        ].join("");
-
-        return `
-          <div class="mapping-field">
-            <label for="map-${field.key}">${field.label}</label>
-            <select id="map-${field.key}" data-map-field="${field.key}">${options}</select>
-          </div>
-        `;
-      }).join("");
-
-      grid.querySelectorAll("[data-map-field]").forEach(select => {
-        select.addEventListener("change", () => {
-          importMapping[select.dataset.mapField] = Number(select.value);
-          renderImportPreview();
-        });
-      });
-
-      renderImportPreview();
-    }
-
-    function renderImportPreview() {
-      const records = getPreparedImportRows();
-      const wrap = document.getElementById("previewWrap");
-      const summary = document.getElementById("previewSummary");
-
-      if (!records.length) {
-        wrap.innerHTML = `<div class="empty">Chưa có dòng dữ liệu hợp lệ theo mapping hiện tại.</div>`;
-        summary.textContent = "Kiểm tra mapping hoặc dữ liệu đã dán.";
-        document.getElementById("importRows").disabled = true;
-        return;
-      }
-
-      const columns = [
-        ["fullName", "Fullname"],
-        ["location", "Location"],
-        ["title", "Title"],
-        ["company", "Company"],
-        ["linkedinUrl", "LinkedIn URL"],
-        ["email", "Email"]
-      ];
-      const shown = records.slice(0, 8);
-
-      wrap.innerHTML = `
-        <table class="preview-table">
-          <thead>
-            <tr>${columns.map(([, label]) => `<th>${label}</th>`).join("")}<th>Kiểm tra trùng</th></tr>
-          </thead>
-          <tbody>
-            ${shown.map(record => {
-              const duplicate = findDatabaseDuplicate(record);
-              const duplicateCell = duplicate
-                ? `Có thể trùng: ${escapeHTML(duplicate.fullName || duplicate.email || duplicate.linkedinUrl)} <span class="duplicate-tag">Trùng</span>`
-                : "Mới";
-              return `
-                <tr>
-                  ${columns.map(([key]) => `<td>${escapeHTML(record[key] || "—")}</td>`).join("")}
-                  <td>${duplicateCell}</td>
-                </tr>
-              `;
-            }).join("")}
-          </tbody>
-        </table>
-      `;
-
-      const duplicateCount = records.filter(record => findDatabaseDuplicate(record)).length;
-      const extra = records.length > shown.length ? ` · Hiển thị ${shown.length}/${records.length} dòng` : "";
-      summary.textContent = `${records.length} dòng hợp lệ · ${duplicateCount} hồ sơ có thể trùng${extra}`;
-      document.getElementById("importRows").disabled = false;
-    }
-
-    document.getElementById("prepareImport").addEventListener("click", () => {
-      const parsed = parseTSV(document.getElementById("databasePaste").value);
-
-      if (!parsed) {
-        showToast("Không đọc được bảng. Hãy copy hàng tiêu đề và ít nhất một hàng dữ liệu từ Google Sheets.");
-        return;
-      }
-
-      importTable = parsed;
-      importMapping = buildMapping(parsed.headers);
-      document.getElementById("importResult").textContent = "";
-      renderMappingUI();
-    });
-
-    document.getElementById("clearImport").addEventListener("click", () => {
-      document.getElementById("databasePaste").value = "";
-      document.getElementById("mappingPanel").classList.add("hidden");
-      document.getElementById("importResult").textContent = "";
-      importTable = null;
-      importMapping = null;
-    });
-
-    function updateDuplicate(existing, incoming) {
-      ["fullName", "firstname", "lastname", "location", "title", "company", "linkedinUrl", "email"].forEach(key => {
-        if (incoming[key]) existing[key] = incoming[key];
-      });
-      existing.updatedAt = new Date().toISOString();
-    }
-
-    document.getElementById("importRows").addEventListener("click", () => {
-      const records = getPreparedImportRows();
-      if (!records.length) return;
-
-      const mode = document.getElementById("duplicateMode").value;
-      let added = 0;
-      let updated = 0;
-      let skipped = 0;
-
-      records.forEach(record => {
-        const duplicate = findDatabaseDuplicate(record);
-
-        if (duplicate) {
-          if (mode === "update") {
-            updateDuplicate(duplicate, record);
-            updated++;
-          } else {
-            skipped++;
-          }
-        } else {
-          databaseCandidates.unshift(record);
-          added++;
-        }
-      });
-
-      saveData();
-      renderDatabase();
-
-      const message = `Hoàn tất: thêm ${added}, cập nhật ${updated}, bỏ qua ${skipped}.`;
-      document.getElementById("importResult").textContent = message;
-      showToast(message);
-    });
-
-    function safeLinkedInHref(value) {
-      const normalized = normalizeLinkedInInput(value);
-      try {
-        const parsed = new URL(normalized);
-        return /(^|\.)linkedin\.com$/i.test(parsed.hostname) ? parsed.href : "";
-      } catch {
-        return "";
-      }
-    }
-
-    function getFilteredDatabase() {
-      const filters = {};
-      document.querySelectorAll("[data-db-filter]").forEach(input => {
-        filters[input.dataset.dbFilter] = normalize(input.value.trim());
-      });
-
-      return databaseCandidates.filter(record =>
-        Object.entries(filters).every(([key, query]) =>
-          !query || normalize(record[key] || "").includes(query)
-        )
-      );
-    }
-
-    function renderDatabase() {
-      const filtered = getFilteredDatabase();
-      document.getElementById("databaseCount").textContent =
-        `${filtered.length} hiển thị · ${databaseCandidates.length} tổng cộng`;
-
-      const wrap = document.getElementById("databaseTableWrap");
-      if (!filtered.length) {
-        wrap.innerHTML = `<div class="empty">${
-          databaseCandidates.length
-            ? "Không tìm thấy ứng viên khớp bộ lọc."
-            : "Database chưa có ứng viên. Dán bảng tính ở trên để nhập."
-        }</div>`;
-        return;
-      }
-
-      wrap.innerHTML = `
-        <table class="database-table">
-          <thead>
-            <tr>
-              <th>Fullname</th>
-              <th>Location</th>
-              <th>Title</th>
-              <th>Company</th>
-              <th>LinkedIn URL</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${filtered.map(record => {
-              const href = safeLinkedInHref(record.linkedinUrl);
-              const linkedinCell = href
-                ? `<a class="table-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">${escapeHTML(record.linkedinUrl)}</a>`
-                : escapeHTML(record.linkedinUrl || "—");
-
-              return `
-                <tr>
-                  <td>${escapeHTML(record.fullName || "—")}</td>
-                  <td>${escapeHTML(record.location || "—")}</td>
-                  <td>${escapeHTML(record.title || "—")}</td>
-                  <td>${escapeHTML(record.company || "—")}</td>
-                  <td>${linkedinCell}</td>
-                  <td>${escapeHTML(record.email || "—")}</td>
-                </tr>
-              `;
-            }).join("")}
-          </tbody>
-        </table>
-      `;
-    }
-
-    document.querySelectorAll("[data-db-filter]").forEach(input => {
-      input.addEventListener("input", renderDatabase);
-    });
-
-    function renderArchive() {
-      const archived = getArchivedCandidates();
-      document.getElementById("archiveCount").textContent = `${archived.length} hồ sơ`;
-      const list = document.getElementById("archiveList");
-
-      if (!archived.length) {
-        list.innerHTML = `<div class="empty">Chưa có ứng viên trong lưu trữ.</div>`;
-        selectedArchivedCandidateId = null;
-        document.getElementById("archiveDetailPanel").innerHTML =
-          `<div class="empty">Ứng viên được lưu trữ sẽ xuất hiện ở đây.</div>`;
+          `<div class="empty">Ứng viên được chuyển vào lưu trữ sẽ xuất hiện ở đây.</div>`;
         return;
       }
 
@@ -1915,7 +1360,9 @@
 
     function renderArchivedDetails() {
       const panel = document.getElementById("archiveDetailPanel");
-      const candidate = candidates.find(item => item.id === selectedArchivedCandidateId && item.archivedAt);
+      const candidate = candidates.find(item =>
+        item.id === selectedArchivedCandidateId && item.archivedAt
+      );
 
       if (!candidate) {
         panel.innerHTML = `<div class="empty">Chọn ứng viên đã lưu trữ để xem thông tin.</div>`;
@@ -1923,49 +1370,69 @@
       }
 
       const currentJob = jobs.find(item => item.id === candidate.jobId);
-      const snapshot = candidate.archivedJobSnapshot || {};
-      const jobTitle = candidate.archivedJobName || displayJobName(currentJob);
-      const jdText = currentJob?.jd || snapshot.jd || "Không còn nội dung JD.";
-      const feedbackText = currentJob?.feedback || snapshot.feedback || "Không có feedback đã lưu.";
-      const criteria = Array.isArray(candidate.criteria) ? candidate.criteria : [];
+      const snapshot = candidate.archivedJobSnapshot || null;
+      const archivedJobTitle = candidate.archivedJobName || displayJobName(currentJob);
+      const jdText = currentJob?.jd || snapshot?.jd || "Không còn nội dung JD.";
+      const feedbackText = currentJob?.feedback || snapshot?.feedback || "Không có feedback đã lưu.";
+      const archivedDate = new Date(candidate.archivedAt).toLocaleString();
+
+      const jobOptions = jobs.length
+        ? jobs.map(job => `
+            <option value="${escapeHTML(job.id)}" ${job.id === candidate.jobId ? "selected" : ""}>
+              ${escapeHTML(displayJobName(job))}
+            </option>
+          `).join("")
+        : `<option value="">Chưa có JD</option>`;
+
+      const criteria = candidate.criteria || [];
       const required = criteria.filter(item => item.type === "required");
       const nice = criteria.filter(item => item.type === "nice");
-      const jobOptions = jobs.length
-        ? jobs.map(job => `<option value="${escapeHTML(job.id)}" ${job.id === candidate.jobId ? "selected" : ""}>${escapeHTML(displayJobName(job))}</option>`).join("")
-        : `<option value="">Chưa có JD</option>`;
 
       panel.innerHTML = `
         <div class="detail-head">
           <div>
             <h2 class="detail-name">${escapeHTML(candidate.name)}</h2>
             <div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            <div class="candidate-job">JD trước khi lưu trữ: ${escapeHTML(jobTitle)}</div>
-            <div class="archive-date">Đưa vào lưu trữ: ${escapeHTML(new Date(candidate.archivedAt).toLocaleString())}</div>
+            <div class="candidate-job">JD trước khi lưu trữ: ${escapeHTML(archivedJobTitle)}</div>
+            <div class="archive-date">Đưa vào lưu trữ: ${escapeHTML(archivedDate)}</div>
           </div>
           ${candidateLinkedInLinks(candidate)}
         </div>
+
         <div class="detail-content">
           <div class="group-title"><span>JD đã dùng</span></div>
           <div class="job-info-box">
-            <div class="job-info-title">${escapeHTML(jobTitle)}</div>
+            <div class="job-info-title">${escapeHTML(archivedJobTitle)}</div>
             <div class="job-info-text">${escapeHTML(jdText)}</div>
             <div class="job-info-section">
               <div class="job-info-title">Feedback khách hàng</div>
               <div class="job-info-text">${escapeHTML(feedbackText)}</div>
             </div>
           </div>
-          <div class="group-title"><span>Tiêu chí trong lần screening</span><span class="group-label">${criteria.length} tiêu chí</span></div>
-          ${required.length ? `<div class="group-title"><span>Bắt buộc</span><span class="group-label">${required.length}</span></div>${required.map(criterionMarkup).join("")}` : ""}
-          ${nice.length ? `<div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length}</span></div>${nice.map(criterionMarkup).join("")}` : ""}
-          ${criteria.length ? "" : `<div class="muted">Không có tiêu chí screening đã lưu.</div>`}
+
+          <div class="group-title">
+            <span>Tiêu chí trong lần screening</span>
+            <span class="group-label">${criteria.length} tiêu chí</span>
+          </div>
+          ${required.length
+            ? `<div class="group-title"><span>Bắt buộc</span><span class="group-label">${required.length}</span></div>${required.map(criterionMarkup).join("")}`
+            : ""}
+          ${nice.length
+            ? `<div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length}</span></div>${nice.map(criterionMarkup).join("")}`
+            : ""}
+          ${!criteria.length ? `<div class="muted">Không có tiêu chí screening đã lưu.</div>` : ""}
+
           <details class="raw-profile">
             <summary>Xem profile gốc đã dán</summary>
             <pre>${escapeHTML(candidate.raw || "Không có profile gốc.")}</pre>
           </details>
+
           <div class="archive-actions">
             <div class="field">
               <label for="restoreJobSelect">Chọn JD để đưa ứng viên trở lại pipeline</label>
-              <select id="restoreJobSelect" ${jobs.length ? "" : "disabled"}>${jobOptions}</select>
+              <select id="restoreJobSelect" ${jobs.length ? "" : "disabled"}>
+                ${jobOptions}
+              </select>
             </div>
             <div class="archive-buttons">
               <button class="button restore" id="restoreCandidate" type="button" ${jobs.length ? "" : "disabled"}>Đưa trở lại</button>
@@ -1983,7 +1450,9 @@
       const candidate = candidates.find(item => item.id === id && item.archivedAt);
       if (!candidate) return;
 
-      const targetJob = jobs.find(job => job.id === document.getElementById("restoreJobSelect").value);
+      const targetJobId = document.getElementById("restoreJobSelect").value;
+      const targetJob = jobs.find(job => job.id === targetJobId);
+
       if (!targetJob) {
         showToast("Hãy tạo hoặc chọn một JD hợp lệ trước.");
         return;
@@ -2008,12 +1477,13 @@
       renderCandidateList();
       renderSelectedCandidate();
       renderArchive();
-      showToast("Đã đưa ứng viên trở lại pipeline.");
+      showToast(`Đã đưa ${candidate.name} trở lại pipeline: ${displayJobName(targetJob)}.`);
     }
 
     function permanentlyDeleteCandidate(id) {
       const candidate = candidates.find(item => item.id === id && item.archivedAt);
       if (!candidate) return;
+
       if (!confirm(`Xóa vĩnh viễn hồ sơ của ${candidate.name}? Thao tác này không thể hoàn tác.`)) return;
 
       candidates = candidates.filter(item => item.id !== id);
@@ -2021,384 +1491,6 @@
       saveData();
       renderArchive();
       showToast("Đã xóa vĩnh viễn hồ sơ ứng viên.");
-    }
-
-    function renderScreening() {
-      renderJobs();
-
-      const hasJobs = jobs.length > 0;
-      document.getElementById("screenJob").disabled = !hasJobs;
-      document.getElementById("profileText").disabled = !hasJobs;
-      document.getElementById("analyzeButton").disabled = !hasJobs;
-
-      const visible = getVisibleCandidates();
-      if (!visible.some(candidate => candidate.id === selectedCandidateId)) {
-        selectedCandidateId = visible[0]?.id || null;
-      }
-      renderCandidateList();
-      renderSelectedCandidate();
-    }
-
-    /* Import bảng tính vào Database */
-    function normalizeHeader(value) {
-      return normalize(value).replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+/g, " ");
-    }
-
-    const headerAliases = {
-      fullName: ["fullname", "full name", "name", "candidate name", "applicant name"],
-      firstname: ["firstname", "first name", "given name", "forename"],
-      lastname: ["lastname", "last name", "surname", "family name"],
-      location: ["location", "city", "current location", "region", "address", "based in"],
-      title: ["title", "job title", "current title", "position", "current position", "role"],
-      company: ["company", "current company", "employer", "organization", "organisation"],
-      linkedinUrl: ["linkedin", "linkedin url", "linkedin profile", "linkedin profile url", "profile url", "linkedin link"],
-      email: ["email", "e mail", "email address", "e mail address"]
-    };
-
-    function guessField(header) {
-      const normalized = normalizeHeader(header);
-      for (const [field, aliases] of Object.entries(headerAliases)) {
-        if (aliases.includes(normalized)) return field;
-      }
-      return "";
-    }
-
-    function parseTSV(text) {
-      const cleanText = String(text || "").replace(/^\uFEFF/, "").trim();
-      if (!cleanText) return null;
-
-      const lines = cleanText.split(/\r?\n/);
-      if (lines.length < 2) return null;
-
-      const rows = lines.map(line => line.split("\t"));
-      const headers = rows[0].map((value, index) => value.trim() || `Cột ${index + 1}`);
-      const data = rows.slice(1)
-        .filter(row => row.some(cell => String(cell || "").trim()))
-        .map(row => headers.map((_, index) => String(row[index] || "").trim()));
-
-      return data.length ? { headers, rows: data } : null;
-    }
-
-    function buildMapping(headers) {
-      const mapping = {};
-      databaseFields.forEach(field => {
-        mapping[field.key] = headers.findIndex(header => guessField(header) === field.key);
-      });
-      return mapping;
-    }
-
-    function getMappedValue(row, field) {
-      const index = Number(importMapping?.[field] ?? -1);
-      return index >= 0 ? String(row[index] || "").trim() : "";
-    }
-
-    function normalizeLinkedInInput(value) {
-      const input = String(value || "").trim();
-      if (!input) return "";
-
-      const url = /^https?:\/\//i.test(input) ? input : `https://${input}`;
-      try {
-        const parsed = new URL(url);
-        if (!/(^|\.)linkedin\.com$/i.test(parsed.hostname)) return input;
-        parsed.hash = "";
-        return parsed.href.replace(/\/$/, "");
-      } catch {
-        return input;
-      }
-    }
-
-    function makeImportedRecord(row, rowIndex) {
-      const firstname = getMappedValue(row, "firstname");
-      const lastname = getMappedValue(row, "lastname");
-      const providedFullName = getMappedValue(row, "fullName");
-
-      return {
-        id: `db-${Date.now()}-${rowIndex}-${Math.random().toString(36).slice(2, 7)}`,
-        fullName: providedFullName || [firstname, lastname].filter(Boolean).join(" ").trim(),
-        firstname,
-        lastname,
-        location: getMappedValue(row, "location"),
-        title: getMappedValue(row, "title"),
-        company: getMappedValue(row, "company"),
-        linkedinUrl: normalizeLinkedInInput(getMappedValue(row, "linkedinUrl")),
-        email: getMappedValue(row, "email"),
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
-    }
-
-    function normalizeMatch(value) {
-      return normalizeLinkedInInput(value)
-        .replace(/^https?:\/\//i, "")
-        .replace(/^www\./i, "")
-        .replace(/\/+$/, "")
-        .toLowerCase();
-    }
-
-    function findDatabaseDuplicate(record) {
-      const url = normalizeMatch(record.linkedinUrl);
-      const email = normalizeMatch(record.email);
-
-      if (url) {
-        const sameUrl = databaseCandidates.find(item => normalizeMatch(item.linkedinUrl) === url);
-        if (sameUrl) return sameUrl;
-      }
-      if (email) {
-        const sameEmail = databaseCandidates.find(item => normalizeMatch(item.email) === email);
-        if (sameEmail) return sameEmail;
-      }
-      return null;
-    }
-
-    function getPreparedImportRows() {
-      if (!importTable || !importMapping) return [];
-
-      return importTable.rows
-        .map((row, index) => makeImportedRecord(row, index))
-        .filter(record => Boolean(
-          record.fullName || record.location || record.title ||
-          record.company || record.linkedinUrl || record.email
-        ));
-    }
-
-    function renderMappingUI() {
-      const panel = document.getElementById("mappingPanel");
-      const grid = document.getElementById("mappingGrid");
-
-      if (!importTable || !importMapping) {
-        panel.classList.add("hidden");
-        return;
-      }
-
-      panel.classList.remove("hidden");
-      document.getElementById("mappingMessage").textContent =
-        `Đã nhận diện ${importTable.headers.length} cột và ${importTable.rows.length} dòng dữ liệu. Kiểm tra mapping trước khi nhập.`;
-
-      grid.innerHTML = databaseFields.map(field => {
-        const options = [
-          `<option value="-1">Không nhập</option>`,
-          ...importTable.headers.map((header, index) =>
-            `<option value="${index}" ${Number(importMapping[field.key]) === index ? "selected" : ""}>${escapeHTML(header)}</option>`
-          )
-        ].join("");
-
-        return `
-          <div class="mapping-field">
-            <label for="map-${field.key}">${field.label}</label>
-            <select id="map-${field.key}" data-map-field="${field.key}">${options}</select>
-          </div>
-        `;
-      }).join("");
-
-      grid.querySelectorAll("[data-map-field]").forEach(select => {
-        select.addEventListener("change", () => {
-          importMapping[select.dataset.mapField] = Number(select.value);
-          renderImportPreview();
-        });
-      });
-
-      renderImportPreview();
-    }
-
-    function renderImportPreview() {
-      const records = getPreparedImportRows();
-      const wrap = document.getElementById("previewWrap");
-      const summary = document.getElementById("previewSummary");
-
-      if (!records.length) {
-        wrap.innerHTML = `<div class="empty">Chưa có dòng dữ liệu hợp lệ theo mapping hiện tại.</div>`;
-        summary.textContent = "Kiểm tra mapping hoặc dữ liệu đã dán.";
-        document.getElementById("importRows").disabled = true;
-        return;
-      }
-
-      const columns = [
-        ["fullName", "Fullname"],
-        ["location", "Location"],
-        ["title", "Title"],
-        ["company", "Company"],
-        ["linkedinUrl", "LinkedIn URL"],
-        ["email", "Email"]
-      ];
-      const shown = records.slice(0, 8);
-
-      wrap.innerHTML = `
-        <table class="preview-table">
-          <thead>
-            <tr>${columns.map(([, label]) => `<th>${label}</th>`).join("")}<th>Kiểm tra trùng</th></tr>
-          </thead>
-          <tbody>
-            ${shown.map(record => {
-              const duplicate = findDatabaseDuplicate(record);
-              const duplicateCell = duplicate
-                ? `Có thể trùng: ${escapeHTML(duplicate.fullName || duplicate.email || duplicate.linkedinUrl)} <span class="duplicate-tag">Trùng</span>`
-                : "Mới";
-              return `
-                <tr>
-                  ${columns.map(([key]) => `<td>${escapeHTML(record[key] || "—")}</td>`).join("")}
-                  <td>${duplicateCell}</td>
-                </tr>
-              `;
-            }).join("")}
-          </tbody>
-        </table>
-      `;
-
-      const duplicateCount = records.filter(record => findDatabaseDuplicate(record)).length;
-      const more = records.length > shown.length ? ` · Hiển thị ${shown.length}/${records.length} dòng` : "";
-      summary.textContent = `${records.length} dòng hợp lệ · ${duplicateCount} hồ sơ có thể trùng${more}`;
-      document.getElementById("importRows").disabled = false;
-    }
-
-    document.getElementById("prepareImport").addEventListener("click", () => {
-      const parsed = parseTSV(document.getElementById("databasePaste").value);
-
-      if (!parsed) {
-        showToast("Không đọc được bảng. Hãy copy hàng tiêu đề và ít nhất một hàng dữ liệu từ Google Sheets.");
-        return;
-      }
-
-      importTable = parsed;
-      importMapping = buildMapping(parsed.headers);
-      document.getElementById("importResult").textContent = "";
-      renderMappingUI();
-    });
-
-    document.getElementById("clearImport").addEventListener("click", () => {
-      document.getElementById("databasePaste").value = "";
-      document.getElementById("mappingPanel").classList.add("hidden");
-      document.getElementById("importResult").textContent = "";
-      importTable = null;
-      importMapping = null;
-    });
-
-    function updateDuplicate(existing, incoming) {
-      ["fullName", "firstname", "lastname", "location", "title", "company", "linkedinUrl", "email"].forEach(key => {
-        if (incoming[key]) existing[key] = incoming[key];
-      });
-      existing.updatedAt = new Date().toISOString();
-    }
-
-    document.getElementById("importRows").addEventListener("click", () => {
-      const records = getPreparedImportRows();
-      if (!records.length) return;
-
-      const mode = document.getElementById("duplicateMode").value;
-      let added = 0;
-      let updated = 0;
-      let skipped = 0;
-
-      records.forEach(record => {
-        const duplicate = findDatabaseDuplicate(record);
-        if (duplicate) {
-          if (mode === "update") {
-            updateDuplicate(duplicate, record);
-            updated++;
-          } else {
-            skipped++;
-          }
-        } else {
-          databaseCandidates.unshift(record);
-          added++;
-        }
-      });
-
-      saveData();
-      renderDatabase();
-
-      const message = `Hoàn tất: thêm ${added}, cập nhật ${updated}, bỏ qua ${skipped}.`;
-      document.getElementById("importResult").textContent = message;
-      showToast(message);
-    });
-
-    function safeLinkedInHref(value) {
-      const normalized = normalizeLinkedInInput(value);
-      try {
-        const parsed = new URL(normalized);
-        return /(^|\.)linkedin\.com$/i.test(parsed.hostname) ? parsed.href : "";
-      } catch {
-        return "";
-      }
-    }
-
-    function getFilteredDatabase() {
-      const filters = {};
-      document.querySelectorAll("[data-db-filter]").forEach(input => {
-        filters[input.dataset.dbFilter] = normalize(input.value.trim());
-      });
-
-      return databaseCandidates.filter(record =>
-        Object.entries(filters).every(([key, query]) =>
-          !query || normalize(record[key] || "").includes(query)
-        )
-      );
-    }
-
-    function renderDatabase() {
-      const filtered = getFilteredDatabase();
-      document.getElementById("databaseCount").textContent =
-        `${filtered.length} hiển thị · ${databaseCandidates.length} tổng cộng`;
-
-      const wrap = document.getElementById("databaseTableWrap");
-      if (!filtered.length) {
-        wrap.innerHTML = `<div class="empty">${
-          databaseCandidates.length
-            ? "Không tìm thấy ứng viên khớp bộ lọc."
-            : "Database chưa có ứng viên. Dán bảng tính ở trên để nhập."
-        }</div>`;
-        return;
-      }
-
-      wrap.innerHTML = `
-        <table class="database-table">
-          <thead>
-            <tr>
-              <th>Fullname</th><th>Location</th><th>Title</th>
-              <th>Company</th><th>LinkedIn URL</th><th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${filtered.map(record => {
-              const href = safeLinkedInHref(record.linkedinUrl);
-              const linkedinCell = href
-                ? `<a class="table-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">${escapeHTML(record.linkedinUrl)}</a>`
-                : escapeHTML(record.linkedinUrl || "—");
-
-              return `
-                <tr>
-                  <td>${escapeHTML(record.fullName || "—")}</td>
-                  <td>${escapeHTML(record.location || "—")}</td>
-                  <td>${escapeHTML(record.title || "—")}</td>
-                  <td>${escapeHTML(record.company || "—")}</td>
-                  <td>${linkedinCell}</td>
-                  <td>${escapeHTML(record.email || "—")}</td>
-                </tr>
-              `;
-            }).join("")}
-          </tbody>
-        </table>
-      `;
-    }
-
-    document.querySelectorAll("[data-db-filter]").forEach(input => {
-      input.addEventListener("input", renderDatabase);
-    });
-
-    function renderScreening() {
-      renderJobs();
-
-      const hasJobs = jobs.length > 0;
-      document.getElementById("screenJob").disabled = !hasJobs;
-      document.getElementById("profileText").disabled = !hasJobs;
-      document.getElementById("analyzeButton").disabled = !hasJobs;
-
-      const visible = getVisibleCandidates();
-      if (!visible.some(candidate => candidate.id === selectedCandidateId)) {
-        selectedCandidateId = visible[0]?.id || null;
-      }
-
-      renderCandidateList();
-      renderSelectedCandidate();
     }
 
     document.getElementById("screenJob").addEventListener("change", () => {
@@ -2408,161 +1500,8 @@
       renderSelectedCandidate();
     });
 
-    function renderArchive() {
-      const archived = getArchivedCandidates();
-      document.getElementById("archiveCount").textContent = `${archived.length} hồ sơ`;
-      const list = document.getElementById("archiveList");
-
-      if (!archived.length) {
-        list.innerHTML = `<div class="empty">Chưa có ứng viên trong lưu trữ.</div>`;
-        selectedArchivedCandidateId = null;
-        document.getElementById("archiveDetailPanel").innerHTML =
-          `<div class="empty">Ứng viên được lưu trữ sẽ xuất hiện ở đây.</div>`;
-        return;
-      }
-
-      if (!archived.some(candidate => candidate.id === selectedArchivedCandidateId)) {
-        selectedArchivedCandidateId = archived[0].id;
-      }
-
-      list.innerHTML = archived.map(candidate => `
-        <article class="candidate ${candidate.id === selectedArchivedCandidateId ? "selected" : ""}" data-archived-id="${escapeHTML(candidate.id)}">
-          <div class="candidate-top">
-            <div class="candidate-name">${escapeHTML(candidate.name)}</div>
-            <span class="decision-badge pending">Lưu trữ</span>
-          </div>
-          <div class="candidate-meta-row">
-            <div class="candidate-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            ${candidateLinkedInLinks(candidate)}
-          </div>
-          <div class="candidate-job">${escapeHTML(candidateJobName(candidate))}</div>
-        </article>
-      `).join("");
-
-      list.querySelectorAll("[data-archived-id]").forEach(element => {
-        element.addEventListener("click", event => {
-          if (event.target.closest("[data-candidate-link]")) return;
-          selectedArchivedCandidateId = element.dataset.archivedId;
-          renderArchive();
-        });
-      });
-
-      renderArchivedDetails();
-    }
-
-    function renderArchivedDetails() {
-      const panel = document.getElementById("archiveDetailPanel");
-      const candidate = candidates.find(item => item.id === selectedArchivedCandidateId && item.archivedAt);
-
-      if (!candidate) {
-        panel.innerHTML = `<div class="empty">Chọn ứng viên đã lưu trữ để xem thông tin.</div>`;
-        return;
-      }
-
-      const currentJob = jobs.find(item => item.id === candidate.jobId);
-      const snapshot = candidate.archivedJobSnapshot || {};
-      const jobTitle = candidate.archivedJobName || displayJobName(currentJob);
-      const jdText = currentJob?.jd || snapshot.jd || "Không còn nội dung JD.";
-      const feedbackText = currentJob?.feedback || snapshot.feedback || "Không có feedback đã lưu.";
-      const criteria = Array.isArray(candidate.criteria) ? candidate.criteria : [];
-      const required = criteria.filter(item => item.type === "required");
-      const nice = criteria.filter(item => item.type === "nice");
-      const jobOptions = jobs.length
-        ? jobs.map(job => `<option value="${escapeHTML(job.id)}" ${job.id === candidate.jobId ? "selected" : ""}>${escapeHTML(displayJobName(job))}</option>`).join("")
-        : `<option value="">Chưa có JD</option>`;
-
-      panel.innerHTML = `
-        <div class="detail-head">
-          <div>
-            <h2 class="detail-name">${escapeHTML(candidate.name)}</h2>
-            <div class="detail-role">${escapeHTML(candidate.role)} · ${escapeHTML(candidate.company)}</div>
-            <div class="candidate-job">JD trước khi lưu trữ: ${escapeHTML(jobTitle)}</div>
-            <div class="archive-date">Đưa vào lưu trữ: ${escapeHTML(new Date(candidate.archivedAt).toLocaleString())}</div>
-          </div>
-          ${candidateLinkedInLinks(candidate)}
-        </div>
-        <div class="detail-content">
-          <div class="group-title"><span>JD đã dùng</span></div>
-          <div class="job-info-box">
-            <div class="job-info-title">${escapeHTML(jobTitle)}</div>
-            <div class="job-info-text">${escapeHTML(jdText)}</div>
-            <div class="job-info-section">
-              <div class="job-info-title">Feedback khách hàng</div>
-              <div class="job-info-text">${escapeHTML(feedbackText)}</div>
-            </div>
-          </div>
-          <div class="group-title"><span>Tiêu chí trong lần screening</span><span class="group-label">${criteria.length} tiêu chí</span></div>
-          ${required.length ? `<div class="group-title"><span>Bắt buộc</span><span class="group-label">${required.length}</span></div>${required.map(criterionMarkup).join("")}` : ""}
-          ${nice.length ? `<div class="group-title"><span>Nice to have</span><span class="group-label nice">${nice.length}</span></div>${nice.map(criterionMarkup).join("")}` : ""}
-          ${criteria.length ? "" : `<div class="muted">Không có tiêu chí screening đã lưu.</div>`}
-          <details class="raw-profile">
-            <summary>Xem profile gốc đã dán</summary>
-            <pre>${escapeHTML(candidate.raw || "Không có profile gốc.")}</pre>
-          </details>
-          <div class="archive-actions">
-            <div class="field">
-              <label for="restoreJobSelect">Chọn JD để đưa ứng viên trở lại pipeline</label>
-              <select id="restoreJobSelect" ${jobs.length ? "" : "disabled"}>${jobOptions}</select>
-            </div>
-            <div class="archive-buttons">
-              <button class="button restore" id="restoreCandidate" type="button" ${jobs.length ? "" : "disabled"}>Đưa trở lại</button>
-              <button class="button danger" id="deletePermanently" type="button">Xóa vĩnh viễn</button>
-            </div>
-          </div>
-        </div>
-      `;
-
-      document.getElementById("restoreCandidate").addEventListener("click", () => restoreCandidate(candidate.id));
-      document.getElementById("deletePermanently").addEventListener("click", () => permanentlyDeleteCandidate(candidate.id));
-    }
-
-    function restoreCandidate(id) {
-      const candidate = candidates.find(item => item.id === id && item.archivedAt);
-      if (!candidate) return;
-
-      const targetJob = jobs.find(job => job.id === document.getElementById("restoreJobSelect").value);
-      if (!targetJob) {
-        showToast("Hãy tạo hoặc chọn một JD hợp lệ trước.");
-        return;
-      }
-
-      candidate.jobId = targetJob.id;
-      candidate.criteria = getAllCriteria(targetJob).map(item => ({
-        ...item,
-        evidence: findEvidence(item.text, candidate.raw || "")
-      }));
-      candidate.decision = null;
-      delete candidate.archivedAt;
-      delete candidate.archivedJobName;
-      delete candidate.archivedJobSnapshot;
-
-      selectedCandidateId = candidate.id;
-      selectedArchivedCandidateId = null;
-      saveData();
-
-      document.getElementById("screenJob").value = targetJob.id;
-      updateScreenJobInfo();
-      renderCandidateList();
-      renderSelectedCandidate();
-      renderArchive();
-      showToast("Đã đưa ứng viên trở lại pipeline.");
-    }
-
-    function permanentlyDeleteCandidate(id) {
-      const candidate = candidates.find(item => item.id === id && item.archivedAt);
-      if (!candidate) return;
-      if (!confirm(`Xóa vĩnh viễn hồ sơ của ${candidate.name}? Thao tác này không thể hoàn tác.`)) return;
-
-      candidates = candidates.filter(item => item.id !== id);
-      selectedArchivedCandidateId = getArchivedCandidates()[0]?.id || null;
-      saveData();
-      renderArchive();
-      showToast("Đã xóa vĩnh viễn hồ sơ ứng viên.");
-    }
-
     renderCriteriaEditor([]);
     renderJobs();
-    renderDatabase();
   </script>
 </body>
 </html>
